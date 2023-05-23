@@ -22,6 +22,7 @@ const Contact = ({ result }) => {
         setSendingMail(true)
         const myForm = e.target
         const formData = new FormData(myForm)
+        // console.log(new URLSearchParams(formData).toString())
         // const messageData = new URLSearchParams(formData).toString()
 
         // axios("/", {
@@ -50,7 +51,7 @@ const Contact = ({ result }) => {
                     progress: undefined,
                     theme: "light",
                 })
-                console.log(result.text)
+                console.log(result)
                 setSendingMail(false)
             })
             .catch(error => {
@@ -132,13 +133,13 @@ const Contact = ({ result }) => {
                             data-netlify-recaptcha="true"
                             data-netlify="true"
                         >
+                            <input
+                                type="hidden"
+                                name="form-name"
+                                value="contact"
+                            />
                             <div className="row g-4">
                                 <div className="col-12">
-                                    <input
-                                        type="hidden"
-                                        name="form-name"
-                                        value="contact"
-                                    />
                                     <label
                                         className="form-label"
                                         htmlFor="name"
