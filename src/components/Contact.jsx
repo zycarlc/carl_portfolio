@@ -24,12 +24,15 @@ const Contact = ({ result }) => {
         const formData = new FormData(myForm)
         const messageData = new URLSearchParams(formData).toString()
 
-        axios
-            .post("/", messageData, {
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-            })
+        axios("/", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            data: {
+                property: messageData,
+            },
+        })
             .then(result => {
                 document.getElementById("contact-form").reset()
                 toast.success("Message sent successfully!", {
