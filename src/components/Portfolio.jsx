@@ -24,8 +24,10 @@ const Portfolio = ({ result }) => {
         DOCUMENT: "document",
     }
 
-    let projectsData = [
-        {
+    let projectsData = []
+
+    for (let i = 0; i < 4; i++) {
+        projectsData.push({
             title: "Detailed Project 1",
             type: types.DOCUMENT,
             document: {
@@ -46,30 +48,8 @@ const Portfolio = ({ result }) => {
             },
             thumbImage: "images/projects/project-1.jpg",
             categories: [filters.DETAILED],
-        },
-        {
-            title: "Detailed Project 1",
-            type: types.DOCUMENT,
-            document: {
-                projectInfo:
-                    "Quidam lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-                client: "Ruby Clinton",
-                technologies: "iOS, HTML5, CSS3, PHP, Java",
-                industry: "Art & Design",
-                date: "July 16, 2019",
-                url: {
-                    name: "www.example.com",
-                    link: "https://www.example.com",
-                },
-                sliderImages: [
-                    "images/projects/project-2.jpg",
-                    "images/projects/project-5.jpg",
-                ],
-            },
-            thumbImage: "images/projects/project-1.jpg",
-            categories: [filters.DETAILED],
-        },
-    ]
+        })
+    }
 
     if (result) {
         projectsData = []

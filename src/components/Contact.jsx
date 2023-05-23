@@ -22,17 +22,14 @@ const Contact = ({ result }) => {
         setSendingMail(true)
         const myForm = e.target
         const formData = new FormData(myForm)
-        console.log(formData)
+        const messageData = new URLSearchParams(formData).toString()
+
         axios
-            .post(
-                "/",
-                { body: new URLSearchParams(formData).toString() },
-                {
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                }
-            )
+            .post("/", messageData, {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+            })
             .then(result => {
                 document.getElementById("contact-form").reset()
                 toast.success("Message sent successfully!", {
