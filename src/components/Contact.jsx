@@ -67,7 +67,7 @@ const Contact = ({ result }) => {
                     progress: undefined,
                     theme: "light",
                 })
-                console.log(error.text)
+                console.log(error)
                 setSendingMail(false)
             })
     }
