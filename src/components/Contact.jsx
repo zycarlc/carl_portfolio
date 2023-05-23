@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify"
 
 import "react-toastify/dist/ReactToastify.css"
 import { Tooltip } from "./Tooltip"
-import axios from "axios"
+// import axios from "axios"
 
 const Contact = ({ result }) => {
     const contact = []
@@ -22,16 +22,21 @@ const Contact = ({ result }) => {
         setSendingMail(true)
         const myForm = e.target
         const formData = new FormData(myForm)
-        const messageData = new URLSearchParams(formData).toString()
+        // const messageData = new URLSearchParams(formData).toString()
 
-        axios("/", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            data: {
-                property: messageData,
-            },
+        // axios("/", {
+        //     method: "post",
+        //     headers: {
+        //         "Content-Type": "application/x-www-form-urlencoded",
+        //     },
+        //     data: {
+        //         property: messageData,
+        //     },
+        // })
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
         })
             .then(result => {
                 document.getElementById("contact-form").reset()
