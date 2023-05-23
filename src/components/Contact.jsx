@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 
 import "react-toastify/dist/ReactToastify.css"
@@ -14,7 +14,7 @@ const Contact = ({ result }) => {
             contact.push([method, value])
         }
     }
-    const form = useRef()
+    // const form = useRef()
     const [sendingMail, setSendingMail] = useState(false)
 
     const sendEmail = e => {
@@ -22,8 +22,10 @@ const Contact = ({ result }) => {
         setSendingMail(true)
         const myForm = e.target
         const formData = new FormData(myForm)
+
         // console.log(new URLSearchParams(formData).toString())
-        // const messageData = new URLSearchParams(formData).toString()
+        const messageData = new URLSearchParams(formData).toString()
+        console.log(messageData)
 
         // axios("/", {
         //     method: "post",
@@ -37,7 +39,7 @@ const Contact = ({ result }) => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
+            body: messageData,
         })
             .then(result => {
                 document.getElementById("contact-form").reset()
@@ -124,10 +126,10 @@ const Contact = ({ result }) => {
                         </h2>
                         {/* Contact Form */}
                         <form
-                            id="contact-form"
+                            // id="contact-form"
                             className="form-border"
                             method="post"
-                            ref={form}
+                            // ref={form}
                             onSubmit={sendEmail}
                             name="contact"
                             data-netlify-recaptcha="true"
