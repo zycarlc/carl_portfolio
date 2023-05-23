@@ -23,19 +23,8 @@ const Contact = ({ result }) => {
         const myForm = e.target
         const formData = new FormData(myForm)
 
-        // console.log(new URLSearchParams(formData).toString())
         const messageData = new URLSearchParams(formData).toString()
-        console.log(messageData)
 
-        // axios("/", {
-        //     method: "post",
-        //     headers: {
-        //         "Content-Type": "application/x-www-form-urlencoded",
-        //     },
-        //     data: {
-        //         property: messageData,
-        //     },
-        // })
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -126,7 +115,7 @@ const Contact = ({ result }) => {
                         </h2>
                         {/* Contact Form */}
                         <form
-                            // id="contact-form"
+                            id="contact-form"
                             className="form-border"
                             method="post"
                             // ref={form}
