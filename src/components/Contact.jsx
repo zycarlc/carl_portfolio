@@ -128,10 +128,17 @@ const Contact = ({ result }) => {
                             method="post"
                             ref={form}
                             onSubmit={sendEmail}
-                            netlify
+                            name="contact"
+                            data-netlify-recaptcha="true"
+                            data-netlify="true"
                         >
                             <div className="row g-4">
                                 <div className="col-12">
+                                    <input
+                                        type="hidden"
+                                        name="form-name"
+                                        value="contact"
+                                    />
                                     <label
                                         className="form-label"
                                         htmlFor="name"
