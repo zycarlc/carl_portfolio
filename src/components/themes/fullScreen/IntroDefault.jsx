@@ -13,7 +13,7 @@ const FullScreenDefaultIntro = ({ result }) => {
                 <div className="row">
                     <div className="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
                         <h1 className="text-12 fw-300 mb-0 text-uppercase">
-                            Hi, I'm a Junior Software Engineer
+                            Hi, I'm a {result?.jobTitle}
                         </h1>
                         <h2 className="text-21 fw-600 text-uppercase mb-0 ms-n1">
                             <Typewriter
@@ -24,7 +24,9 @@ const FullScreenDefaultIntro = ({ result }) => {
                                 }}
                             />
                         </h2>
-                        <p className="text-5">based in Melbourne, Australia.</p>
+                        <p className="text-5">
+                            based in {result.contactInfo?.location}.
+                        </p>
                         <Link
                             className="btn btn-secondary rounded-0 smooth-scroll mt-3"
                             smooth="easeInOutQuint"

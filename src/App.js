@@ -120,7 +120,10 @@ function App() {
                         <CallToAction></CallToAction>
                         <Contact result={result}></Contact>
                     </div>
-                    <Footer handleNavClick={handleNavClick}></Footer>
+                    <Footer
+                        handleNavClick={handleNavClick}
+                        result={result}
+                    ></Footer>
                 </div>
                 {/* back to top */}
                 <Tooltip text="Back to Top" placement="left">
