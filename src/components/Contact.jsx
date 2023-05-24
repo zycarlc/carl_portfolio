@@ -28,7 +28,6 @@ const Contact = ({ result }) => {
         const myForm = e.target
         const formData = new FormData(myForm)
         const messageData = new URLSearchParams(formData).toString()
-        console.log(messageData)
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -194,12 +193,17 @@ const Contact = ({ result }) => {
                                     />
                                 </div>
                                 <div data-netlify-recaptcha="true"></div>
-                                <div className="col-12">
+                                <div className="d-flex col-12">
                                     <button
                                         id="submit-btn"
                                         className="btn btn-dark rounded-0"
                                         type="submit"
                                         disabled={buttonDisabled}
+                                        style={{
+                                            height: "50px",
+                                            alignSelf: "center",
+                                            marginRight: "10px",
+                                        }}
                                     >
                                         {sendingMail ? (
                                             <>
@@ -219,16 +223,16 @@ const Contact = ({ result }) => {
                                             </>
                                         )}
                                     </button>
+                                    <Recaptcha
+                                        ref={recaptchaRef}
+                                        sitekey={
+                                            process.env.REACT_APP_GGL_RECAPTCHA
+                                        }
+                                        size="normal"
+                                        id="recaptcha-google"
+                                        onChange={() => setButtonDisable(false)}
+                                    />
                                 </div>
-                                <Recaptcha
-                                    ref={recaptchaRef}
-                                    sitekey={
-                                        process.env.REACT_APP_GGL_RECAPTCHA
-                                    }
-                                    size="normal"
-                                    id="recaptcha-google"
-                                    onChange={() => setButtonDisable(false)}
-                                />
                                 <ToastContainer />
                             </div>
                         </form>
