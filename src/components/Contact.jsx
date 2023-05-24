@@ -1,12 +1,15 @@
 import React, { useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
-
+import Recaptcha from "react-google-recaptcha"
 import "react-toastify/dist/ReactToastify.css"
 import { Tooltip } from "./Tooltip"
 // import axios from "axios"
 
 const Contact = ({ result }) => {
+    const recaptchaRef = React.createRef()
+
     const contact = []
+
     for (const [method, value] of Object.entries(
         result.contactInfo ? result.contactInfo : {}
     )) {
@@ -14,36 +17,50 @@ const Contact = ({ result }) => {
             contact.push([method, value])
         }
     }
-    // const form = useRef()
+
     const [sendingMail, setSendingMail] = useState(false)
+    const [buttonDisabled, setButtonDisable] = useState(true)
 
     const sendEmail = e => {
         e.preventDefault()
         setSendingMail(true)
+
         const myForm = e.target
         const formData = new FormData(myForm)
-
         const messageData = new URLSearchParams(formData).toString()
-
+        console.log(messageData)
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: messageData,
         })
             .then(result => {
-                document.getElementById("contact-form").reset()
-                toast.success("Message sent successfully!", {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                })
-                console.log(result)
-                setSendingMail(false)
+                if (result.ok) {
+                    document.getElementById("contact-form").reset()
+                    toast.success("Message sent successfully!", {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    })
+                    setSendingMail(false)
+                } else {
+                    toast.error("Something went wrong!", {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    })
+                    setSendingMail(false)
+                }
             })
             .catch(error => {
                 toast.error("Something went wrong!", {
@@ -177,11 +194,12 @@ const Contact = ({ result }) => {
                                     />
                                 </div>
                                 <div data-netlify-recaptcha="true"></div>
-                                <div className="col-12 text-center text-lg-start">
+                                <div className="col-12">
                                     <button
                                         id="submit-btn"
                                         className="btn btn-dark rounded-0"
                                         type="submit"
+                                        disabled={buttonDisabled}
                                     >
                                         {sendingMail ? (
                                             <>
@@ -202,6 +220,15 @@ const Contact = ({ result }) => {
                                         )}
                                     </button>
                                 </div>
+                                <Recaptcha
+                                    ref={recaptchaRef}
+                                    sitekey={
+                                        process.env.REACT_APP_GGL_RECAPTCHA
+                                    }
+                                    size="normal"
+                                    id="recaptcha-google"
+                                    onChange={() => setButtonDisable(false)}
+                                />
                                 <ToastContainer />
                             </div>
                         </form>
