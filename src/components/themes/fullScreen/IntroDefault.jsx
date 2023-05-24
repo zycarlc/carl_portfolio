@@ -3,7 +3,7 @@ import { Link } from "react-scroll"
 import Typewriter from "typewriter-effect"
 import { scrollDuration } from "../../../config/commonConfig"
 
-const FullScreenDefaultIntro = () => {
+const FullScreenDefaultIntro = ({ result }) => {
     return (
         <section
             id="home"
@@ -51,7 +51,7 @@ const FullScreenDefaultIntro = () => {
                         <div className="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
                             <img
                                 className="img-fluid rounded-pill d-block"
-                                src="images/web-developer.jpg"
+                                src={result.contactInfo?.portrait}
                                 title="I'm Carl"
                                 alt="I'm Carl"
                             />

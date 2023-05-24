@@ -98,6 +98,17 @@ const Contact = ({ result }) => {
                             })}
 
                         <ul className="social-icons social-icons-lg justify-content-center justify-content-lg-start mt-5">
+                            <li className="social-icons-instagram">
+                                <Tooltip text="Instagram" placement="top">
+                                    <a
+                                        href={`http://www.instagram.com/${result.contactInfo?.instagram}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i className="fab fa-instagram" />
+                                    </a>
+                                </Tooltip>
+                            </li>
                             <li className="social-icons-github">
                                 <Tooltip text="Github" placement="top">
                                     <a

@@ -141,13 +141,13 @@ const FullScreenHeader = ({ textWhite, result }) => {
                                         style={{ cursor: "pointer" }}
                                         activeClass="active"
                                         spy
-                                        to="portfolio"
+                                        to="projects"
                                         onClick={e => {
                                             e.preventDefault()
                                             setIsNavModalClose(true)
                                         }}
                                     >
-                                        Portfolio
+                                        Projects
                                     </Link>
                                 </li>
                                 <li className="nav-item">
@@ -172,7 +172,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
                                 <li className="social-icons-instagram">
                                     <Tooltip text="Instagram" placement="top">
                                         <a
-                                            href="http://www.instagram.com/"
+                                            href={`http://www.instagram.com/${result.contactInfo?.instagram}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
