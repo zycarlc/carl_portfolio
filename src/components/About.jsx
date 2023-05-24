@@ -61,6 +61,15 @@ const AboutUs = ({ result }) => {
                         </p>
                     </div>
                     <div
+                        className="col-6 col-lg-3wow fadeInUp"
+                        data-wow-delay="0.4s"
+                    >
+                        <p className="text-muted fw-500 mb-0">From:</p>
+                        <p className="text-4 text-dark fw-600 mb-0">
+                            {result.contactInfo?.location}
+                        </p>
+                    </div>
+                    <div
                         className="col-6 col-lg-3 wow fadeInUp"
                         data-wow-delay="0.2s"
                     >
@@ -72,15 +81,6 @@ const AboutUs = ({ result }) => {
                             >
                                 {result.contactInfo?.email}
                             </a>
-                        </p>
-                    </div>
-                    <div
-                        className="col-6 col-lg-3 wow fadeInUp"
-                        data-wow-delay="0.4s"
-                    >
-                        <p className="text-muted fw-500 mb-0">From:</p>
-                        <p className="text-4 text-dark fw-600 mb-0">
-                            {result.contactInfo?.location}
                         </p>
                     </div>
                 </div>

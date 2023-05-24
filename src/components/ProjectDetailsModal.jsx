@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react"
 
 import Slider from "react-slick"
-import ModalVideo from "react-modal-video"
 
 const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
     const sliderRef = useRef()
@@ -219,33 +218,6 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                         </div>
                     </div>
                 </div>
-            )}
-
-            {projectDetails?.type === types.IMAGE && (
-                <div
-                    className="portfolio-image-modal"
-                    onClick={() => setIsOpen(false)}
-                >
-                    <img
-                        src={projectDetails?.thumbImage}
-                        alt={projectDetails?.title}
-                        onClick={e => e.stopPropagation()}
-                    />
-                    <button
-                        type="button"
-                        className="btn-close btn-close-white opacity-10"
-                        onClick={() => setIsOpen(false)}
-                    ></button>
-                </div>
-            )}
-            {projectDetails?.type === types.VIDEO && (
-                <ModalVideo
-                    channel={projectDetails?.video?.vimeo ? "vimeo" : "youtube"}
-                    autoplay
-                    isOpen={projectDetails?.type === types.VIDEO}
-                    videoId={projectDetails?.video?.id}
-                    onClose={() => setIsOpen(false)}
-                />
             )}
         </>
     )

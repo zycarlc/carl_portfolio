@@ -42,17 +42,20 @@ const FullScreenHeader = ({ textWhite, result }) => {
                     {/* Logo */}
                     <Link
                         className="logo"
-                        title="Callum"
+                        title="Carl"
                         smooth="easeInOutQuint"
                         duration={scrollDuration}
-                        style={{ cursor: "pointer", textDecoration: "none" }}
+                        style={{
+                            cursor: "pointer",
+                            textDecoration: "none",
+                        }}
                         to="home"
                         onClick={e => {
                             e.preventDefault()
                             setIsNavModalClose(true)
                         }}
                     >
-                        <p style={{ color: textWhite ? "white" : "black" }}>
+                        <p className="mb-0" style={{ color: "#1e3932" }}>
                             Carl C
                         </p>
                     </Link>
@@ -64,10 +67,11 @@ const FullScreenHeader = ({ textWhite, result }) => {
                         }
                         type="button"
                         onClick={() => setIsNavModalClose(!isNavModalClose)}
+                        style={{ color: "#1e3932" }}
                     >
-                        <span />
-                        <span />
-                        <span />
+                        <span style={{ backgroundColor: "#1e3932" }} />
+                        <span style={{ backgroundColor: "#1e3932" }} />
+                        <span style={{ backgroundColor: "#1e3932" }} />
                     </button>
                     <div
                         id="header-nav"

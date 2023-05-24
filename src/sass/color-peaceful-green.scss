@@ -13,7 +13,8 @@ $secondary-color-hover: darken($secondary-color, 30%);
 $body-bg: #dddddd;
 
 ::selection {
-    background: $primary-color;
+    background: $secondary-color;
+    color: #f3f1e7;
 }
 
 a,

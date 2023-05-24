@@ -46,7 +46,7 @@ const Portfolio = ({ result }) => {
                     "images/projects/project-5.jpg",
                 ],
             },
-            thumbImage: "images/projects/project-1.jpg",
+            thumbImage: "images/no-image.png",
             categories: [filters.DETAILED],
         })
     }
@@ -205,9 +205,8 @@ const Portfolio = ({ result }) => {
                                                             {project?.title}
                                                         </h5>
                                                         <span className="text-light">
-                                                            {
-                                                                project.projectType
-                                                            }
+                                                            Click for project
+                                                            details
                                                         </span>
                                                     </div>
                                                 </div>

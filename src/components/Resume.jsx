@@ -23,32 +23,6 @@ const Resume = ({ result }) => {
     }
 
     const skills = result?.skills
-    // const skills = [
-    //     {
-    //         name: "Web Design",
-    //         percent: 65,
-    //     },
-    //     {
-    //         name: "HTML/CSS",
-    //         percent: 95,
-    //     },
-    //     {
-    //         name: "JavaScript",
-    //         percent: 80,
-    //     },
-    //     {
-    //         name: "React JS",
-    //         percent: 70,
-    //     },
-    //     {
-    //         name: "Angular Js",
-    //         percent: 60,
-    //     },
-    //     {
-    //         name: "Bootstrap",
-    //         percent: 99,
-    //     },
-    // ]
 
     return (
         <section id="resume" className="section">
@@ -122,7 +96,7 @@ const Resume = ({ result }) => {
                                             {value.responsibilities.map(
                                                 (resp, i) => (
                                                     <li
-                                                        className="text-muted"
+                                                        className="text-muted mb-2"
                                                         key={i}
                                                     >
                                                         {resp}

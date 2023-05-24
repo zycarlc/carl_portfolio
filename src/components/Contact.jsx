@@ -111,7 +111,7 @@ const Contact = ({ result }) => {
                         data-wow-delay="0.3s"
                     >
                         <h2 className="text-10 fw-600 text-center text-lg-start mb-5">
-                            Estimate your Project?
+                            Contact me
                         </h2>
                         {/* Contact Form */}
                         <form
