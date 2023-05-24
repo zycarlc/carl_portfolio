@@ -176,7 +176,7 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                                                                 "text-dark fw-600 me-2"
                                                             }
                                                         >
-                                                            Date:
+                                                            Year:
                                                         </span>
                                                         {
                                                             projectDetails
@@ -195,7 +195,7 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                                                             href={
                                                                 projectDetails
                                                                     ?.document
-                                                                    ?.url?.name
+                                                                    ?.url?.link
                                                             }
                                                             className="btn btn-primary shadow-none rounded-0 px-3 py-1"
                                                             target="_blank"

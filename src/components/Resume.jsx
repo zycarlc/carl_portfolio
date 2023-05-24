@@ -141,7 +141,7 @@ const Resume = ({ result }) => {
                 <p className="text-center mt-5 wow fadeInUp">
                     <a
                         className="btn btn-secondary shadow-none rounded-0"
-                        href="https://drive.google.com/file/d/1LwbAf5Veda29x1xAJ1m-yMaguW4nFt0V/view?usp=share_link"
+                        href={result?.resume}
                         rel="noopener noreferrer"
                         target="_blank"
                     >
