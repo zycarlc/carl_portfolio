@@ -193,37 +193,40 @@ const Contact = ({ result }) => {
                                     />
                                 </div>
                                 <div data-netlify-recaptcha="true"></div>
-                                <div className="d-flex col-12">
-                                    <button
-                                        id="submit-btn"
-                                        className="btn btn-dark rounded-0"
-                                        type="submit"
-                                        disabled={buttonDisabled}
-                                        style={{
-                                            height: "50px",
-                                            alignSelf: "center",
-                                            marginRight: "10px",
-                                        }}
-                                    >
-                                        {sendingMail ? (
-                                            <>
-                                                <span
-                                                    role="status"
-                                                    aria-hidden="true"
-                                                    className="spinner-border spinner-border-sm align-self-center me-2"
-                                                ></span>
-                                                Sending......
-                                            </>
-                                        ) : (
-                                            <>
-                                                Send{" "}
-                                                <span className="ms-3">
-                                                    <i className="fas fa-arrow-right" />
-                                                </span>
-                                            </>
-                                        )}
-                                    </button>
+                                <div className="row col-12">
+                                    <div className="col-6">
+                                        <button
+                                            id="submit-btn"
+                                            className="btn btn-dark rounded-0"
+                                            type="submit"
+                                            disabled={buttonDisabled}
+                                            style={{
+                                                height: "50px",
+                                                marginRight: "10px",
+                                                marginBottom: "10px",
+                                            }}
+                                        >
+                                            {sendingMail ? (
+                                                <div className="d-flex justify-content-center">
+                                                    <span
+                                                        role="status"
+                                                        aria-hidden="true"
+                                                        className="spinner-border spinner-border-sm align-self-center me-2 d-inline-block"
+                                                    ></span>
+                                                    Sending......
+                                                </div>
+                                            ) : (
+                                                <div className="d-flex justify-content-center">
+                                                    Send{" "}
+                                                    <span className="ms-3 ">
+                                                        <i className="fas fa-arrow-right" />
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </button>
+                                    </div>
                                     <Recaptcha
+                                        className="col-12 col-sm-4"
                                         ref={recaptchaRef}
                                         sitekey={
                                             process.env.REACT_APP_GGL_RECAPTCHA
