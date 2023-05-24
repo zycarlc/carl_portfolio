@@ -176,6 +176,7 @@ const Contact = ({ result }) => {
                                         defaultValue={""}
                                     />
                                 </div>
+                                <div data-netlify-recaptcha="true"></div>
                                 <div className="col-12 text-center text-lg-start">
                                     <button
                                         id="submit-btn"
