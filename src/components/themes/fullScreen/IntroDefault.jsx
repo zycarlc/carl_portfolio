@@ -4,11 +4,21 @@ import Typewriter from "typewriter-effect"
 import { scrollDuration } from "../../../config/commonConfig"
 
 const FullScreenDefaultIntro = ({ result }) => {
+    const [imageLoaded, setImageLoaded] = React.useState(false)
     return (
         <section
             id="home"
             className="bg-primary d-flex fullscreen position-relative py-5"
         >
+            <img
+                src={result.contactInfo?.portrait}
+                onLoad={() => {
+                    setImageLoaded(true)
+                }}
+                title="I'm Carl"
+                alt="I'm Carl"
+                hidden
+            />
             <div className="container my-auto py-4">
                 <div className="row">
                     <div className="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
@@ -53,9 +63,14 @@ const FullScreenDefaultIntro = ({ result }) => {
                         <div className="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
                             <img
                                 className="img-fluid rounded-pill d-block"
-                                src={result.contactInfo?.portrait}
+                                src={
+                                    imageLoaded
+                                        ? result.contactInfo?.portrait
+                                        : "/images/web-developer-sm.jpg"
+                                }
                                 title="I'm Carl"
                                 alt="I'm Carl"
+                                style={{ width: "500px", height: "500px" }}
                             />
                         </div>
                     </div>
