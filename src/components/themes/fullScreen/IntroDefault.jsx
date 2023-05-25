@@ -70,7 +70,6 @@ const FullScreenDefaultIntro = ({ result }) => {
                                 }
                                 title="I'm Carl"
                                 alt="I'm Carl"
-                                style={{ width: "500px", height: "500px" }}
                             />
                         </div>
                     </div>
