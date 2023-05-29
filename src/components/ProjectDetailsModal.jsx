@@ -72,145 +72,136 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
 
     return (
         <>
-            {projectDetails?.type === types.DOCUMENT && (
-                <div className="project-details-modal">
+            <div className="project-details-modal">
+                <div
+                    className="modal fade bg-dark-1 show"
+                    style={{ display: "block" }}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    onClick={() => setIsOpen(false)}
+                >
                     <div
-                        className="modal fade bg-dark-1 show"
-                        style={{ display: "block" }}
-                        tabIndex={-1}
-                        aria-hidden="true"
-                        onClick={() => setIsOpen(false)}
+                        className="modal-dialog modal-xl"
+                        onClick={e => e.stopPropagation()}
                     >
-                        <div
-                            className="modal-dialog modal-xl"
-                            onClick={e => e.stopPropagation()}
-                        >
-                            <div className={"modal-content rounded-0"}>
-                                <div className="modal-body">
-                                    <button
-                                        type="button"
-                                        className={"btn-close "}
-                                        onClick={() => setIsOpen(false)}
-                                    />
-                                    <div
-                                        className={"container ajax-container "}
+                        <div className={"modal-content rounded-0"}>
+                            <div className="modal-body">
+                                <button
+                                    type="button"
+                                    className={"btn-close "}
+                                    onClick={() => setIsOpen(false)}
+                                />
+                                <div className={"container ajax-container "}>
+                                    <h2
+                                        className={
+                                            "text-6 fw-600 text-center mb-4"
+                                        }
                                     >
-                                        <h2
-                                            className={
-                                                "text-6 fw-600 text-center mb-4"
-                                            }
-                                        >
-                                            {projectDetails?.title}
-                                        </h2>
-                                        <div className="row g-4">
-                                            <div className="col-lg-7">
-                                                <Slider
-                                                    {...settings}
-                                                    ref={sliderRef}
-                                                >
-                                                    <div className="item">
-                                                        <img
-                                                            className="img-fluid"
-                                                            alt=""
-                                                            src={
-                                                                projectDetails?.thumbImage
-                                                            }
-                                                        />
-                                                    </div>
-                                                    {projectDetails?.document
-                                                        ?.sliderImages?.length >
-                                                        0 &&
-                                                        projectDetails?.document?.sliderImages?.map(
-                                                            (image, index) => (
-                                                                <div
-                                                                    className="item"
-                                                                    key={index}
-                                                                >
-                                                                    <img
-                                                                        className="img-fluid"
-                                                                        alt=""
-                                                                        src={
-                                                                            image
-                                                                        }
-                                                                    />
-                                                                </div>
-                                                            )
-                                                        )}
-                                                </Slider>
-                                            </div>
-                                            <div className="col-lg-5">
-                                                <h4 className={"text-4 fw-600"}>
-                                                    Project Info:
-                                                </h4>
-                                                <p>
+                                        {projectDetails?.title}
+                                    </h2>
+                                    <div className="row g-4">
+                                        <div className="col-lg-7">
+                                            <Slider
+                                                {...settings}
+                                                ref={sliderRef}
+                                            >
+                                                <div className="item">
+                                                    <img
+                                                        className="img-fluid"
+                                                        alt=""
+                                                        src={
+                                                            projectDetails?.thumbImage
+                                                        }
+                                                    />
+                                                </div>
+                                                {projectDetails?.document
+                                                    ?.sliderImages?.length >
+                                                    0 &&
+                                                    projectDetails?.document?.sliderImages?.map(
+                                                        (image, index) => (
+                                                            <div
+                                                                className="item"
+                                                                key={index}
+                                                            >
+                                                                <img
+                                                                    className="img-fluid"
+                                                                    alt=""
+                                                                    src={image}
+                                                                />
+                                                            </div>
+                                                        )
+                                                    )}
+                                            </Slider>
+                                        </div>
+                                        <div className="col-lg-5">
+                                            <h4 className={"text-4 fw-600"}>
+                                                Project Info:
+                                            </h4>
+                                            <p>
+                                                {
+                                                    projectDetails?.document
+                                                        ?.projectInfo
+                                                }
+                                            </p>
+                                            <h4
+                                                className={"text-4 fw-600 mt-4"}
+                                            >
+                                                Project Details:
+                                            </h4>
+                                            <ul className={"list-style-2 "}>
+                                                <li>
+                                                    <span
+                                                        className={
+                                                            "text-dark fw-600 me-2"
+                                                        }
+                                                    >
+                                                        Technologies:
+                                                    </span>
                                                     {
                                                         projectDetails?.document
-                                                            ?.projectInfo
+                                                            ?.technologies
                                                     }
-                                                </p>
-                                                <h4
-                                                    className={
-                                                        "text-4 fw-600 mt-4"
+                                                </li>
+                                                <li>
+                                                    <span
+                                                        className={
+                                                            "text-dark fw-600 me-2"
+                                                        }
+                                                    >
+                                                        Year:
+                                                    </span>
+                                                    {
+                                                        projectDetails?.document
+                                                            ?.date
                                                     }
-                                                >
-                                                    Project Details:
-                                                </h4>
-                                                <ul className={"list-style-2 "}>
-                                                    <li>
-                                                        <span
-                                                            className={
-                                                                "text-dark fw-600 me-2"
-                                                            }
-                                                        >
-                                                            Technologies:
-                                                        </span>
+                                                </li>
+                                                <li>
+                                                    <span
+                                                        className={
+                                                            "text-dark fw-600 me-2"
+                                                        }
+                                                    >
+                                                        Live Demo:
+                                                    </span>
+                                                    <a
+                                                        href={
+                                                            projectDetails
+                                                                ?.document?.url
+                                                                ?.link
+                                                        }
+                                                        className="btn btn-primary shadow-none rounded-0 px-3 py-1"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
                                                         {
                                                             projectDetails
-                                                                ?.document
-                                                                ?.technologies
+                                                                ?.document?.url
+                                                                ?.name
                                                         }
-                                                    </li>
-                                                    <li>
-                                                        <span
-                                                            className={
-                                                                "text-dark fw-600 me-2"
-                                                            }
-                                                        >
-                                                            Year:
-                                                        </span>
-                                                        {
-                                                            projectDetails
-                                                                ?.document?.date
-                                                        }
-                                                    </li>
-                                                    <li>
-                                                        <span
-                                                            className={
-                                                                "text-dark fw-600 me-2"
-                                                            }
-                                                        >
-                                                            Live Demo:
-                                                        </span>
-                                                        <a
-                                                            href={
-                                                                projectDetails
-                                                                    ?.document
-                                                                    ?.url?.link
-                                                            }
-                                                            className="btn btn-primary shadow-none rounded-0 px-3 py-1"
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                        >
-                                                            {
-                                                                projectDetails
-                                                                    ?.document
-                                                                    ?.url?.name
-                                                            }
-                                                            <i className="fas fa-external-link-alt ms-1" />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                                        <i className="fas fa-external-link-alt ms-1" />
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +209,7 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                         </div>
                     </div>
                 </div>
-            )}
+            </div>
         </>
     )
 }

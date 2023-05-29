@@ -28,7 +28,14 @@ const FullScreenDefaultIntro = ({ result }) => {
                         <h2 className="text-21 fw-600 text-uppercase mb-0 ms-n1">
                             <Typewriter
                                 options={{
-                                    strings: ["Developer", "Carl Chen"],
+                                    strings: [
+                                        "Developer",
+                                        "Carl Chen",
+                                        "Bimmer",
+                                        "Aquarist",
+                                        "Diver",
+                                        "你好",
+                                    ],
                                     autoStart: true,
                                     loop: true,
                                 }}
@@ -42,7 +49,7 @@ const FullScreenDefaultIntro = ({ result }) => {
                             smooth="easeInOutQuint"
                             duration={scrollDuration}
                             style={{ cursor: "pointer" }}
-                            to="portfolio"
+                            to="projects"
                         >
                             View My Works
                         </Link>

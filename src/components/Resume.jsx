@@ -1,4 +1,7 @@
 import React from "react"
+import { Tooltip } from "./Tooltip"
+import { Link } from "react-scroll"
+import { scrollDuration } from "../config/commonConfig"
 
 const Resume = ({ result }) => {
     const educationDetails = result?.educations
@@ -29,13 +32,73 @@ const Resume = ({ result }) => {
             <div className="container">
                 {/* Heading */}
                 <p className=" text-center mb-2 wow fadeInUp">
-                    <span className="bg-primary text-dark px-2">Resume</span>
+                    <span className="bg-primary text-5 px-2">Resume</span>
                 </p>
                 <h2 className="text-10 fw-600 text-center mb-5 wow fadeInUp">
                     A summary of My Resume
                 </h2>
                 {/* Heading end*/}
                 <div className="row g-5 mt-5">
+                    {/* My Experience */}
+                    <div
+                        className="col-lg-6 wow fadeInUp"
+                        data-wow-delay="0.2s"
+                    >
+                        <h2 className="text-7 col-sm-6 fw-600 mb-4 pb-2">
+                            My Experience
+                        </h2>
+
+                        <div className="border-start border-2 border-primary ps-3">
+                            <div>
+                                <Link
+                                    className="nav-link "
+                                    smooth="easeInOutQuint"
+                                    duration={scrollDuration}
+                                    style={{ cursor: "pointer" }}
+                                    activeClass="active"
+                                    spy
+                                    to="projects"
+                                >
+                                    <u className="text-secondary">
+                                        <h3 className="text-5">
+                                            Check out my recent projects here
+                                        </h3>
+                                    </u>
+                                </Link>
+                                <p className="mb-2">
+                                    General Assembly / Feb 2023 - May 2023
+                                </p>
+
+                                <hr className="my-4" />
+                            </div>
+                            {experienceDetails?.length > 0 &&
+                                experienceDetails.map((value, index) => (
+                                    <div key={index}>
+                                        <h3 className="text-5">
+                                            {value.jobTitle}
+                                        </h3>
+                                        <p className="mb-2">
+                                            {value.company} /{" "}
+                                            {value.startMMYYYY} -{" "}
+                                            {value.endMMYYYY}
+                                        </p>
+                                        <ul>
+                                            {value.responsibilities?.map(
+                                                (resp, i) => (
+                                                    <li
+                                                        className="text-muted mb-2"
+                                                        key={i}
+                                                    >
+                                                        {resp}
+                                                    </li>
+                                                )
+                                            )}
+                                        </ul>
+                                        <hr className="my-4" />
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
                     {/* My Education */}
                     <div className="col-lg-6 wow fadeInUp">
                         <h2 className="text-7 fw-600 mb-4 pb-2">
@@ -72,43 +135,6 @@ const Resume = ({ result }) => {
                                 ))}
                         </div>
                     </div>
-                    {/* My Experience */}
-                    <div
-                        className="col-lg-6 wow fadeInUp"
-                        data-wow-delay="0.2s"
-                    >
-                        <h2 className="text-7 fw-600 mb-4 pb-2">
-                            My Experience
-                        </h2>
-                        <div className="border-start border-2 border-primary ps-3">
-                            {experienceDetails?.length > 0 &&
-                                experienceDetails.map((value, index) => (
-                                    <div key={index}>
-                                        <h3 className="text-5">
-                                            {value.jobTitle}
-                                        </h3>
-                                        <p className="mb-2">
-                                            {value.company} /{" "}
-                                            {value.startMMYYYY} -{" "}
-                                            {value.endMMYYYY}
-                                        </p>
-                                        <ul>
-                                            {value.responsibilities.map(
-                                                (resp, i) => (
-                                                    <li
-                                                        className="text-muted mb-2"
-                                                        key={i}
-                                                    >
-                                                        {resp}
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                        <hr className="my-4" />
-                                    </div>
-                                ))}
-                        </div>
-                    </div>
                 </div>
                 {/* My Skills */}
                 <h2 className="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">
@@ -123,16 +149,13 @@ const Resume = ({ result }) => {
                             >
                                 <div className="skill-box">
                                     <div className="skill-img">
-                                        <img
-                                            className="img-fluid d-block skill-image"
-                                            src={skillIcons[skill]}
-                                            alt=""
-                                        />
-                                        <div className="skill-overlay-details">
-                                            <p className="fw-500 text-start mb-2">
-                                                {skill}{" "}
-                                            </p>
-                                        </div>
+                                        <Tooltip text={skill} placement="top">
+                                            <img
+                                                className="img-fluid d-block skill-image"
+                                                src={skillIcons[skill]}
+                                                alt=""
+                                            />
+                                        </Tooltip>
                                     </div>
                                 </div>
                             </div>
