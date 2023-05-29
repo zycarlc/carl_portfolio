@@ -5,7 +5,7 @@ const AboutUs = ({ result }) => {
             <div className="container">
                 {/* Heading */}
                 <p className="text-center mb-2 wow fadeInUp">
-                    <span className="bg-primary text-dark px-2">About Me</span>
+                    <span className="bg-primary text-5 px-2">About Me</span>
                 </p>
                 <h2 className="text-10 fw-600 text-center mb-5 wow fadeInUp">
                     Know Me More
@@ -54,15 +54,18 @@ const AboutUs = ({ result }) => {
                     </div>
                 </div>
                 <div className="row gy-3 mt-4">
-                    <div className="col-6 col-lg-3 wow fadeInUp">
+                    <div
+                        className="col-6 col-lg-3 wow fadeInUp"
+                        data-wow-delay="0.2s"
+                    >
                         <p className="text-muted fw-500 mb-0">Name:</p>
                         <p className="text-4 text-dark fw-600 mb-0">
                             {result?.name}
                         </p>
                     </div>
                     <div
-                        className="col-6 col-lg-3wow fadeInUp"
-                        data-wow-delay="0.4s"
+                        className="col-6 col-lg-3 wow fadeInUp"
+                        data-wow-delay="0.3s"
                     >
                         <p className="text-muted fw-500 mb-0">From:</p>
                         <p className="text-4 text-dark fw-600 mb-0">
@@ -71,7 +74,7 @@ const AboutUs = ({ result }) => {
                     </div>
                     <div
                         className="col-6 col-lg-3 wow fadeInUp"
-                        data-wow-delay="0.2s"
+                        data-wow-delay="0.4s"
                     >
                         <p className="text-muted fw-500 mb-0">Email:</p>
                         <p className="text-4 fw-600 mb-0">
