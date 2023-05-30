@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import Isotope from "isotope-layout"
 import ProjectDetailsModal from "./ProjectDetailsModal"
+import MobileProjectCard from "./MobileProjectCard"
 
 const mockUp = {
     title: "Detailed Project 1",
@@ -19,6 +20,8 @@ const mockUp = {
             "images/projects/project-2.jpg",
             "images/projects/project-5.jpg",
         ],
+        shortIntro:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi provident vitae est quia asperiores repellat accusamus aspernatur aut iusto quod, quae beatae recusandae laboriosam labore similique odit quas debitis assumenda?",
     },
     thumbImage: "images/no-image.png",
 }
@@ -26,12 +29,26 @@ const mockUp = {
 const Portfolio = ({ result }) => {
     // init one ref to store the future isotope object
     const isotope = useRef()
-    const projectsData = useRef()
+    const projectsData = useRef([])
     const demoImages = useRef()
+
     const [imagesLoaded, setimagesLoaded] = useState(0)
     const [selectedProjectDetails, setSelectedProjectDetails] = useState()
     const [isOpen, setIsOpen] = useState(false)
     const [isMouseOn, setIsMouseOn] = useState(false)
+
+    const [width, setWidth] = useState(window.innerWidth)
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth)
+    }
+    useEffect(() => {
+        window.addEventListener("resize", handleWindowSizeChange)
+        return () => {
+            window.removeEventListener("resize", handleWindowSizeChange)
+        }
+    }, [])
+    const isMobile = width <= 768
 
     const htmlElement = document.getElementsByTagName("html")[0]
     const isRtl = htmlElement.getAttribute("dir") === "rtl"
@@ -114,118 +131,150 @@ const Portfolio = ({ result }) => {
                     </h2>
                     {/* Heading end*/}
                     <div className="portfolio wow fadeInUp">
-                        <div className="row portfolio-filter filter-container g-4">
+                        <div className="row filter-container g-4 portfolio-filter">
                             {projectsData.current?.length > 0 &&
-                                projectsData.current?.map((project, index) => (
-                                    <div
-                                        className={"col-sm-6 filter-item"}
-                                        key={index}
-                                        onMouseLeave={() => {
-                                            setIsMouseOn(false)
-                                        }}
-                                    >
-                                        <div className="portfolio-box">
-                                            <div className="portfolio-img">
-                                                <div
-                                                    className="portfolio-image"
-                                                    onMouseLeave={() => {
-                                                        isotope.current.arrange(
-                                                            {
-                                                                filter: `*`,
-                                                            }
-                                                        )
-                                                    }}
-                                                    onMouseOver={() => {
-                                                        isotope.current.arrange(
-                                                            {
-                                                                filter: `*`,
-                                                            }
-                                                        )
-                                                        setIsMouseOn(index)
-                                                    }}
-                                                >
-                                                    {isMouseOn === index ? (
+                                projectsData.current?.map((project, index) => {
+                                    if (isMobile) {
+                                        return (
+                                            <div
+                                                className="col-12 filter-item"
+                                                key={index}
+                                            >
+                                                <MobileProjectCard
+                                                    project={project}
+                                                    isotope={isotope}
+                                                    demoImages={demoImages}
+                                                    index={index}
+                                                    setSelectedProjectDetails={
+                                                        selectedProjectDetails
+                                                    }
+                                                    setIsOpen={setIsOpen}
+                                                    width={width}
+                                                ></MobileProjectCard>
+                                            </div>
+                                        )
+                                    } else {
+                                        return (
+                                            <div
+                                                className={
+                                                    "col-sm-6 filter-item"
+                                                }
+                                                key={index}
+                                                onMouseLeave={() => {
+                                                    setIsMouseOn(false)
+                                                }}
+                                            >
+                                                <div className="portfolio-box">
+                                                    <div className="portfolio-img">
                                                         <div
-                                                            className="portfolio-overlay"
-                                                            onClick={() => {
-                                                                setSelectedProjectDetails(
-                                                                    projectsData
-                                                                        .current[
-                                                                        index
-                                                                    ]
+                                                            className="portfolio-image"
+                                                            onMouseLeave={() => {
+                                                                isotope.current.arrange(
+                                                                    {
+                                                                        filter: `*`,
+                                                                    }
                                                                 )
-                                                                setIsOpen(true)
+                                                            }}
+                                                            onMouseOver={() => {
+                                                                isotope.current.arrange(
+                                                                    {
+                                                                        filter: `*`,
+                                                                    }
+                                                                )
+                                                                setIsMouseOn(
+                                                                    index
+                                                                )
                                                             }}
                                                         >
-                                                            <img
-                                                                className="img-thumbnail"
-                                                                src={
-                                                                    demoImages.current
-                                                                        ? demoImages
-                                                                              .current[
-                                                                              index
-                                                                          ]
-                                                                            ? demoImages
-                                                                                  .current[
-                                                                                  index
-                                                                              ]
-                                                                            : project.thumbImage
-                                                                        : project.thumbImage
-                                                                }
-                                                                alt=""
-                                                            />
+                                                            {isMouseOn ===
+                                                            index ? (
+                                                                <div
+                                                                    className="portfolio-overlay"
+                                                                    onClick={() => {
+                                                                        setSelectedProjectDetails(
+                                                                            projectsData
+                                                                                .current[
+                                                                                index
+                                                                            ]
+                                                                        )
+                                                                        setIsOpen(
+                                                                            true
+                                                                        )
+                                                                    }}
+                                                                >
+                                                                    <img
+                                                                        className="img-thumbnail"
+                                                                        src={
+                                                                            demoImages.current
+                                                                                ? demoImages
+                                                                                      .current[
+                                                                                      index
+                                                                                  ]
+                                                                                    ? demoImages
+                                                                                          .current[
+                                                                                          index
+                                                                                      ]
+                                                                                    : project.thumbImage
+                                                                                : project.thumbImage
+                                                                        }
+                                                                        alt=""
+                                                                    />
 
-                                                            <div className="portfolio-overlay-details bg-secondary">
-                                                                <h5 className="text-white text-5">
-                                                                    {
-                                                                        project?.title
-                                                                    }
-                                                                </h5>
-                                                                <span className="text-light">
-                                                                    Click for
+                                                                    <div className="portfolio-overlay-details bg-secondary">
+                                                                        <h5 className="text-white text-5">
+                                                                            {
+                                                                                project?.title
+                                                                            }
+                                                                        </h5>
+                                                                        <span className="text-light">
+                                                                            Click
+                                                                            for
+                                                                            project
+                                                                            details
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                <div className="portfolio-thumbnail">
+                                                                    <img
+                                                                        onLoad={() => {
+                                                                            setimagesLoaded(
+                                                                                imagesLoaded +
+                                                                                    1
+                                                                            )
+                                                                        }}
+                                                                        className="img-thumbnail d-block"
+                                                                        src={
+                                                                            project.thumbImage
+                                                                        }
+                                                                        alt=""
+                                                                    />
+                                                                </div>
+                                                            )}
+                                                        </div>
+
+                                                        <div className="d-block mt-4">
+                                                            <h4
+                                                                className={
+                                                                    "text-4 fw-600"
+                                                                }
+                                                            >
+                                                                {project?.title}
+                                                            </h4>
+                                                            <p>
+                                                                {
                                                                     project
-                                                                    details
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="portfolio-thumbnail">
-                                                            <img
-                                                                onLoad={() => {
-                                                                    setimagesLoaded(
-                                                                        imagesLoaded +
-                                                                            1
-                                                                    )
-                                                                }}
-                                                                className="img-thumbnail d-block"
-                                                                src={
-                                                                    project.thumbImage
+                                                                        ?.document
+                                                                        ?.shortIntro
                                                                 }
-                                                                alt=""
-                                                            />
+                                                            </p>
                                                         </div>
-                                                    )}
-                                                </div>
-
-                                                <div className="d-block mt-4">
-                                                    <h4
-                                                        className={
-                                                            "text-4 fw-600"
-                                                        }
-                                                    >
-                                                        {project?.title}
-                                                    </h4>
-                                                    <p>
-                                                        {
-                                                            project?.document
-                                                                ?.shortIntro
-                                                        }
-                                                    </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                ))}
+                                        )
+                                    }
+                                })}
                         </div>
                     </div>
                 </div>
