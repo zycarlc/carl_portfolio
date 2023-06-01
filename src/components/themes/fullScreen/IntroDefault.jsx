@@ -31,7 +31,7 @@ const FullScreenDefaultIntro = ({ result }) => {
                                     strings: [
                                         "Developer",
                                         "Carl Chen",
-                                        "Bimmer",
+                                        "Car Enthusiast",
                                         "Aquarist",
                                         "Diver",
                                         "你好",
