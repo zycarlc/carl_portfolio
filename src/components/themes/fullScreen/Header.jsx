@@ -56,7 +56,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
                         }}
                     >
                         <p className="mb-0" style={{ color: "#1e3932" }}>
-                            Carl C
+                            Carl Chen
                         </p>
                     </Link>
                     {/* Logo End */}
