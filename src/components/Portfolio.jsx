@@ -54,7 +54,7 @@ const Portfolio = ({ result }) => {
     const isRtl = htmlElement.getAttribute("dir") === "rtl"
 
     projectsData.current = []
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         projectsData.current.push(mockUp)
     }
 
@@ -201,9 +201,13 @@ const Portfolio = ({ result }) => {
                                                                             true
                                                                         )
                                                                     }}
+                                                                    style={{
+                                                                        maxHeight:
+                                                                            "400px",
+                                                                    }}
                                                                 >
                                                                     <img
-                                                                        className="img-thumbnail"
+                                                                        className=""
                                                                         src={
                                                                             demoImages.current
                                                                                 ? demoImages
@@ -218,6 +222,10 @@ const Portfolio = ({ result }) => {
                                                                                 : project.thumbImage
                                                                         }
                                                                         alt=""
+                                                                        style={{
+                                                                            height: "100%",
+                                                                            width: "auto",
+                                                                        }}
                                                                     />
 
                                                                     <div className="portfolio-overlay-details bg-secondary">
