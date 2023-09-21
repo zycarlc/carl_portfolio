@@ -23,6 +23,7 @@ const Resume = ({ result }) => {
         SANITY: "https://cdn.sanity.io/images/zpskic8f/production/2a14afdf73e2c5232d56335d20faa8944a39fe9e-512x104.svg",
         Express:
             "https://cdn.sanity.io/images/zpskic8f/production/bde772e9e79c90a7e56bfe60aab4bc59ce641086-512x149.svg",
+        NodeJS: "/images/nodejs-seeklogo.com.svg",
     }
 
     const skills = result?.skills
