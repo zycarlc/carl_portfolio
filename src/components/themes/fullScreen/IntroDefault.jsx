@@ -15,8 +15,8 @@ const FullScreenDefaultIntro = ({ result }) => {
                 onLoad={() => {
                     setImageLoaded(true)
                 }}
-                title="I'm Carl"
-                alt="I'm Carl"
+                title="I'm Zhenyu"
+                alt="I'm Zhenyu"
                 hidden
             />
             <div className="container my-auto py-4">
@@ -30,8 +30,8 @@ const FullScreenDefaultIntro = ({ result }) => {
                                 options={{
                                     strings: [
                                         "Developer",
-                                        "Carl Chen",
-                                        "Car Enthusiast",
+                                        "Zhenyu Chen",
+                                        "Bimmer",
                                         "Aquarist",
                                         "Diver",
                                         "你好",
