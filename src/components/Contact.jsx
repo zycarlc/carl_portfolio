@@ -1,13 +1,9 @@
 import React, { useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
-import Recaptcha from "react-google-recaptcha"
 import "react-toastify/dist/ReactToastify.css"
 import { Tooltip } from "./Tooltip"
-// import axios from "axios"
 
 const Contact = ({ result }) => {
-    const recaptchaRef = React.createRef()
-
     const contact = []
 
     for (const [method, value] of Object.entries(
@@ -19,7 +15,6 @@ const Contact = ({ result }) => {
     }
 
     const [sendingMail, setSendingMail] = useState(false)
-    const [buttonDisabled, setButtonDisable] = useState(true)
 
     const sendEmail = e => {
         e.preventDefault()
@@ -148,7 +143,7 @@ const Contact = ({ result }) => {
                             // ref={form}
                             onSubmit={sendEmail}
                             name="contact"
-                            data-netlify-recaptcha="true"
+                            data-netlify-recaptcha="false"
                             data-netlify="true"
                         >
                             <input
@@ -210,7 +205,6 @@ const Contact = ({ result }) => {
                                             id="submit-btn"
                                             className="btn btn-dark rounded-0"
                                             type="submit"
-                                            disabled={buttonDisabled}
                                             style={{
                                                 height: "50px",
                                                 marginRight: "10px",
@@ -236,16 +230,6 @@ const Contact = ({ result }) => {
                                             )}
                                         </button>
                                     </div>
-                                    <Recaptcha
-                                        className="col-12 col-sm-4"
-                                        ref={recaptchaRef}
-                                        sitekey={
-                                            process.env.REACT_APP_GGL_RECAPTCHA
-                                        }
-                                        size="normal"
-                                        id="recaptcha-google"
-                                        onChange={() => setButtonDisable(false)}
-                                    />
                                 </div>
                                 <ToastContainer />
                             </div>

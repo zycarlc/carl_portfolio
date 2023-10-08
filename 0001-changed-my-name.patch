@@ -1,0 +1,121 @@
+From f2d17878172ec9a4acb8bf937f082ca07d7f3636 Mon Sep 17 00:00:00 2001
+From: Carl <zhenyuc@outlook.com>
+Date: Fri, 22 Sep 2023 14:05:07 +1000
+Subject: [PATCH] changed my name
+
+---
+ public/index.html                                 | 4 ++--
+ src/components/themes/StandardMenu/Header.jsx     | 4 ++--
+ src/components/themes/bottomHeader/Header.jsx     | 2 +-
+ src/components/themes/fullScreen/Header.jsx       | 4 ++--
+ src/components/themes/fullScreen/IntroDefault.jsx | 8 ++++----
+ 5 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/public/index.html b/public/index.html
+index 645e54c..bd3d8b6 100644
+--- a/public/index.html
++++ b/public/index.html
+@@ -24,7 +24,7 @@
+       work correctly both with client-side routing and a non-root public URL.
+       Learn how to configure a non-root public URL by running `npm run build`.
+     -->
+-        <title>Carl Chen</title>
++        <title>Zhenyu Chen</title>
+ 
+         <!-- Animate -->
+         <link
+@@ -54,7 +54,7 @@
+             name="contact"
+             netlify
+             netlify-honeypot="bot-field"
+-            data-netlify-recaptcha="true"
++            data-netlify-recaptcha="false"
+             hidden
+         >
+             <input type="text" name="name" />
+diff --git a/src/components/themes/StandardMenu/Header.jsx b/src/components/themes/StandardMenu/Header.jsx
+index a967cf8..3830682 100644
+--- a/src/components/themes/StandardMenu/Header.jsx
++++ b/src/components/themes/StandardMenu/Header.jsx
+@@ -15,7 +15,7 @@ const StandardMenuHeader = () => {
+                         {/* Logo */}
+                         <Link
+                             className="logo"
+-                            title="Carl"
++                            title="Zhenyu"
+                             smooth="easeInOutQuint"
+                             duration={scrollDuration}
+                             style={{
+@@ -29,7 +29,7 @@ const StandardMenuHeader = () => {
+                                 setIsNavModalClose(true)
+                             }}
+                         >
+-                            <p style={{ color: "black" }}>Carl C</p>
++                            <p style={{ color: "black" }}>Zhenyu C</p>
+                         </Link>
+                         {/* Logo End */}
+                     </div>
+diff --git a/src/components/themes/bottomHeader/Header.jsx b/src/components/themes/bottomHeader/Header.jsx
+index ae14821..bb0f918 100644
+--- a/src/components/themes/bottomHeader/Header.jsx
++++ b/src/components/themes/bottomHeader/Header.jsx
+@@ -28,7 +28,7 @@ const BottomHeader = () => {
+                                 setIsNavModalClose(true)
+                             }}
+                         >
+-                            <p style={{ color: "black" }}>Carl C</p>
++                            <p style={{ color: "black" }}>Zhenyu C</p>
+                         </Link>
+                         {/* Logo End */}
+                     </div>
+diff --git a/src/components/themes/fullScreen/Header.jsx b/src/components/themes/fullScreen/Header.jsx
+index d866217..2b67b1b 100644
+--- a/src/components/themes/fullScreen/Header.jsx
++++ b/src/components/themes/fullScreen/Header.jsx
+@@ -42,7 +42,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
+                     {/* Logo */}
+                     <Link
+                         className="logo"
+-                        title="Carl"
++                        title="Zhenyu"
+                         smooth="easeInOutQuint"
+                         duration={scrollDuration}
+                         style={{
+@@ -56,7 +56,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
+                         }}
+                     >
+                         <p className="mb-0" style={{ color: "#1e3932" }}>
+-                            Carl Chen
++                            Zhenyu Chen
+                         </p>
+                     </Link>
+                     {/* Logo End */}
+diff --git a/src/components/themes/fullScreen/IntroDefault.jsx b/src/components/themes/fullScreen/IntroDefault.jsx
+index eb916d2..668dd32 100644
+--- a/src/components/themes/fullScreen/IntroDefault.jsx
++++ b/src/components/themes/fullScreen/IntroDefault.jsx
+@@ -15,8 +15,8 @@ const FullScreenDefaultIntro = ({ result }) => {
+                 onLoad={() => {
+                     setImageLoaded(true)
+                 }}
+-                title="I'm Carl"
+-                alt="I'm Carl"
++                title="I'm Zhenyu"
++                alt="I'm Zhenyu"
+                 hidden
+             />
+             <div className="container my-auto py-4">
+@@ -30,8 +30,8 @@ const FullScreenDefaultIntro = ({ result }) => {
+                                 options={{
+                                     strings: [
+                                         "Developer",
+-                                        "Carl Chen",
+-                                        "Car Enthusiast",
++                                        "Zhenyu Chen",
++                                        "Bimmer",
+                                         "Aquarist",
+                                         "Diver",
+                                         "你好",
+-- 
+2.39.0
+
