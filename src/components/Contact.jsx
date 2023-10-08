@@ -23,6 +23,7 @@ const Contact = ({ result }) => {
         const myForm = e.target
         const formData = new FormData(myForm)
         const messageData = new URLSearchParams(formData).toString()
+        console.log(messageData)
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -150,7 +151,7 @@ const Contact = ({ result }) => {
                             <input
                                 type="hidden"
                                 name="form-name"
-                                value="contact"
+                                value="contact2"
                             />
                             <div className="row g-4">
                                 <div className="col-12">
