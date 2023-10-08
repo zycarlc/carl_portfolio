@@ -29,6 +29,7 @@ const Contact = ({ result }) => {
             body: messageData,
         })
             .then(result => {
+                console.log(result)
                 if (result.ok) {
                     document.getElementById("contact-form").reset()
                     toast.success("Message sent successfully!", {
