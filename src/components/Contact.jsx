@@ -23,14 +23,12 @@ const Contact = ({ result }) => {
         const myForm = e.target
         const formData = new FormData(myForm)
         const messageData = new URLSearchParams(formData).toString()
-        console.log(messageData)
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: messageData,
         })
             .then(result => {
-                console.log(result)
                 if (result.ok) {
                     document.getElementById("contact-form").reset()
                     toast.success("Message sent successfully!", {
