@@ -30,9 +30,8 @@ const FullScreenDefaultIntro = ({ result }) => {
                                 options={{
                                     strings: [
                                         "Developer",
-                                        "Zhenyu Chen",
                                         "Bimmer",
-                                        "Aquarist",
+                                        "Craftman",
                                         "Diver",
                                         "你好",
                                     ],

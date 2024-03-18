@@ -15,6 +15,7 @@ const Resume = ({ result }) => {
         React: "https://cdn.sanity.io/images/zpskic8f/production/bcf867381478447e5f817a79410e0fa8bddfff38-256x228.svg",
         JavaScript:
             "https://cdn.sanity.io/images/zpskic8f/production/a9f58e5c8d5d0c088ff7e5e43363817b9fa1832b-256x256.svg",
+        TypeScript: "images/Typescript_logo_2020.svg",
         PostgreSQL:
             "https://cdn.sanity.io/images/zpskic8f/production/78caffbd13c7c07ccae5f3144c7df87ceb56bcb6-128x128.svg",
         CSS: "https://cdn.sanity.io/images/zpskic8f/production/64359677c12dadf13878ea291f179acd0f168110-32x32.svg",
@@ -24,6 +25,12 @@ const Resume = ({ result }) => {
         Express:
             "https://cdn.sanity.io/images/zpskic8f/production/bde772e9e79c90a7e56bfe60aab4bc59ce641086-512x149.svg",
         NodeJS: "/images/nodejs-seeklogo.com.svg",
+        NextJS: "images/Nextjs-logo.svg",
+        Tailwindcss: "images/Tailwind_CSS_Logo.svg",
+        "THREE.js": "images/Three.js_Icon.svg",
+        AWS: "images/Amazon_Web_Services_Logo.svg",
+        Python: "images/Python-logo-notext.svg",
+        Docker: "images/Docker_logo.svg",
     }
 
     const skills = result?.skills
