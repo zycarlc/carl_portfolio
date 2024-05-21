@@ -73,7 +73,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
                                     style={{ cursor: "pointer" }}
                                     to="/blog"
                                 >
-                                    Go to My Blog
+                                    Blog
                                 </Link>
                                 <button
                                     className={
