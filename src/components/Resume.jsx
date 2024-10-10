@@ -1,7 +1,6 @@
 import React from "react"
 import { Tooltip } from "./Tooltip"
-import { Link } from "react-scroll"
-import { scrollDuration } from "../config/commonConfig"
+import { Link } from "react-router-dom"
 
 const Resume = ({ result }) => {
     const educationDetails = result?.educations
@@ -57,33 +56,20 @@ const Resume = ({ result }) => {
                         </h2>
 
                         <div className="border-start border-2 border-primary ps-3">
-                            <div>
-                                <Link
-                                    className="nav-link "
-                                    smooth="easeInOutQuint"
-                                    duration={scrollDuration}
-                                    style={{ cursor: "pointer" }}
-                                    activeClass="active"
-                                    spy
-                                    to="projects"
-                                >
-                                    <u className="text-secondary">
-                                        <h3 className="text-5">
-                                            Check out my recent projects here
-                                        </h3>
-                                    </u>
-                                </Link>
-                                <p className="mb-2">
-                                    General Assembly / Feb 2023 - May 2023
-                                </p>
-
-                                <hr className="my-4" />
-                            </div>
                             {experienceDetails?.length > 0 &&
                                 experienceDetails.map((value, index) => (
                                     <div key={index}>
                                         <h3 className="text-5">
-                                            {value.jobTitle}
+                                            {value.jobTitle}{" "}
+                                            {value.company ===
+                                                `Enlightenly` && (
+                                                <Link
+                                                    className="text-secondary text-3"
+                                                    to="/enlightenly-case-study"
+                                                >
+                                                    Case Studies
+                                                </Link>
+                                            )}
                                         </h3>
                                         <p className="mb-2">
                                             {value.company} /{" "}

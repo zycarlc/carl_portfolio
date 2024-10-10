@@ -17,14 +17,15 @@ import BottomHeaderDefaultIntro from "./components/themes/bottomHeader/IntroDefa
 import StandardMenuDefaultIntro from "./components/themes/StandardMenu/IntroDefault"
 import axios from "axios"
 import Blog from "./routes/blog/Blog"
+import Enlightenly from "./routes/enlightenly"
 import React from "react"
 
-let PROJECT_ID = process.env.REACT_APP_SANITY
-let DATASET = process.env.REACT_APP_DATASET
-let QUERY = encodeURIComponent(`*[_type == "${process.env.REACT_APP_QUERY}"]`)
+const PROJECT_ID = process.env.REACT_APP_SANITY
+const DATASET = process.env.REACT_APP_DATASET
+const QUERY = encodeURIComponent(`*[_type == "${process.env.REACT_APP_QUERY}"]`)
 
 // Compose the URL for your project's endpoint and add the query
-let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
 
 function Header({ result, appliedTheme, appliedIntro }) {
     const [scrollTopVisible, setScrollTopVisible] = useState(false)
@@ -135,6 +136,10 @@ export default function App() {
                 <div id="main-wrapper">
                     <Routes>
                         <Route path="/blog" element={<Blog />} />
+                        <Route
+                            path="/enlightenly-case-study"
+                            element={<Enlightenly />}
+                        />
                         <Route
                             path="/"
                             element={

@@ -52,11 +52,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
                             cursor: "pointer",
                             textDecoration: "none",
                         }}
-                        to="home"
-                        onClick={e => {
-                            e.preventDefault()
-                            setIsNavModalClose(true)
-                        }}
+                        to="/"
                     >
                         <p className="mb-0" style={{ color: "#1e3932" }}>
                             Zhenyu Chen

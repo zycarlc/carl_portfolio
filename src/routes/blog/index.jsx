@@ -82,7 +82,6 @@ function Index() {
     }
 
     return (
-        // <Blog/>
         <>
             <div style={{ position: "relative" }}>
                 <div id="main-wrapper">

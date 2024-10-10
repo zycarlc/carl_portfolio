@@ -181,7 +181,10 @@ const ProjectDetailsModal = ({ projectDetails, setIsOpen }) => {
                                                             "text-dark fw-600 me-2"
                                                         }
                                                     >
-                                                        Live Demo:
+                                                        {projectDetails?.title ===
+                                                        "AI-Powered Content Generation System"
+                                                            ? "Case Study:"
+                                                            : "Live Demo:"}
                                                     </span>
                                                     <a
                                                         href={

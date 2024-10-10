@@ -54,7 +54,7 @@ const Portfolio = ({ result }) => {
     const isRtl = htmlElement.getAttribute("dir") === "rtl"
 
     projectsData.current = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         projectsData.current.push(mockUp)
     }
 
@@ -66,7 +66,7 @@ const Portfolio = ({ result }) => {
                 document: {
                     projectInfo: project.intro,
                     technologies: project.technique.join(", "),
-                    date: "2023",
+                    date: project.year,
                     shortIntro: project.shortIntro,
                     url: {
                         name: project.name,
