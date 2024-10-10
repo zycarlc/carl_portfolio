@@ -1,7 +1,12 @@
 import { Link as ScrollTo } from "react-scroll"
 import { scrollDuration } from "../../config/commonConfig"
+import React from "react"
 
 const Enlightenly = () => {
+    React.useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
             <div className="d-flex position-relative py-5 align-items-baseline px-5">
