@@ -1,6 +1,7 @@
 import { Link as ScrollTo } from "react-scroll"
 import { scrollDuration } from "../../config/commonConfig"
 import React from "react"
+import { Helmet } from "react-helmet-async"
 
 const Enlightenly = () => {
     React.useLayoutEffect(() => {
@@ -9,6 +10,31 @@ const Enlightenly = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Internship at Enlightenly - Zhenyu Chen</title>
+                <meta
+                    name="description"
+                    content="AI and LLM Integration Case Study: Full-Stack Developer
+                    Internship at Enlightenly"
+                />
+                <meta
+                    property="og:title"
+                    content="Internship at Enlightenly - Zhenyu Chen"
+                />
+                <meta
+                    property="og:description"
+                    content="AI and LLM Integration Case Study: Full-Stack Developer
+                    Internship at Enlightenly"
+                />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/dmla1ujpx/image/upload/v1728877289/enlightenly/Screenshot_2024-10-14_at_2.40.28_pm_av6rph.png"
+                />
+                <meta
+                    property="og:url"
+                    content="https://zhenyuchen.dev/enlightenly-case-study"
+                />
+            </Helmet>
             <div className="d-flex position-relative py-5 align-items-baseline px-5">
                 <div className="container my-auto py-4">
                     <div className="row">

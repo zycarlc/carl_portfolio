@@ -1,4 +1,5 @@
 import React from "react"
+import { HelmetProvider } from "react-helmet-async"
 
 // for rtl format comment out bootstrap.min.css and uncomment bootstrap.rtl.min.css
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -20,11 +21,14 @@ import { BrowserRouter as Router } from "react-router-dom"
 import App from "./App"
 
 const container = document.getElementById("root")
+const helmetContext = {}
 
 createRoot(container).render(
     <React.StrictMode>
-        <Router>
-            <App />
-        </Router>
+        <HelmetProvider context={helmetContext}>
+            <Router>
+                <App />
+            </Router>
+        </HelmetProvider>
     </React.StrictMode>
 )
