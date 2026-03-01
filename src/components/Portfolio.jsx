@@ -54,11 +54,12 @@ const Portfolio = ({ result }) => {
     const isRtl = htmlElement.getAttribute("dir") === "rtl"
 
     projectsData.current = []
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
         projectsData.current.push(mockUp)
     }
 
     if (result) {
+        console.log("result", result)
         projectsData.current = []
         result.projects.forEach(project => {
             projectsData.current.push({
