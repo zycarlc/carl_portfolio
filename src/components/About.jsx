@@ -38,16 +38,16 @@ const AboutUs = ({ result }) => {
                                     className="wow heartBeat"
                                     data-wow-delay="1.3s"
                                 >
-                                    500+
+                                    2+
                                 </span>
                             </div>
                             <h3
                                 className="text-7 wow rubberBand"
                                 data-wow-delay="2s"
                             >
-                                Hours of{" "}
+                                Years of{" "}
                                 <span className="fw-700">
-                                    Software Engineer Study
+                                    Professional Experience
                                 </span>
                             </h3>
                         </div>

@@ -29,6 +29,7 @@ const FullScreenDefaultIntro = ({ result }) => {
                             <Typewriter
                                 options={{
                                     strings: [
+                                        "AI",
                                         "Developer",
                                         "IoT Enthusiast",
                                         "Smart Home Lover",
