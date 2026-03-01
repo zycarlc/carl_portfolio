@@ -59,7 +59,6 @@ const Portfolio = ({ result }) => {
     }
 
     if (result) {
-        console.log("result", result)
         projectsData.current = []
         result.projects.forEach(project => {
             projectsData.current.push({
