@@ -11,7 +11,7 @@ const Enlightenly = () => {
     return (
         <>
             <Helmet>
-                <title>Internship at Enlightenly - Zhenyu Chen</title>
+                <title>Internship at Enlightenly - Carl Chen</title>
                 <meta
                     name="description"
                     content="AI and LLM Integration Case Study: Full-Stack Developer
@@ -19,7 +19,7 @@ const Enlightenly = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Internship at Enlightenly - Zhenyu Chen"
+                    content="Internship at Enlightenly - Carl Chen"
                 />
                 <meta
                     property="og:description"
@@ -32,7 +32,7 @@ const Enlightenly = () => {
                 />
                 <meta
                     property="og:url"
-                    content="https://zhenyuchen.dev/enlightenly-case-study"
+                    content="https://carlchen.dev/enlightenly-case-study"
                 />
             </Helmet>
             <div className="d-flex position-relative py-5 align-items-baseline px-5">

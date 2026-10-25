@@ -46,7 +46,7 @@
         }
     ],
     "jobTitle": "Software Engineer",
-    "name": "Zhenyu Chen",
+    "name": "Carl Chen",
     "profile": [
         "I'm a software engineer with 3 years of professional experience, currently at Simoco, where I build software for embedded Linux devices: Node.js and JavaScript applications, backend services, web apps, and Windows tools for device provisioning and internal workflows. I enjoy turning customer requirements into reliable systems that run in real-world environments.",
         "I'm also passionate about putting AI to practical use. I led the development of an AI content generation system that writes marketing copy in each client's own voice, and more recently built Roger, an AI character running on a Simoco edge computer that talks with visitors and controls real hardware. I like building the whole system around the model, not just calling an API.",

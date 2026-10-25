@@ -28,7 +28,7 @@ const BottomHeader = () => {
                                 setIsNavModalClose(true)
                             }}
                         >
-                            <p style={{ color: "black" }}>Zhenyu C</p>
+                            <p style={{ color: "black" }}>Carl C</p>
                         </Link>
                         {/* Logo End */}
                     </div>

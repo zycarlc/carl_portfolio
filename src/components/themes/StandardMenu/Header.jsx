@@ -15,7 +15,7 @@ const StandardMenuHeader = () => {
                         {/* Logo */}
                         <Link
                             className="logo"
-                            title="Zhenyu"
+                            title="Carl"
                             smooth="easeInOutQuint"
                             duration={scrollDuration}
                             style={{
@@ -29,7 +29,7 @@ const StandardMenuHeader = () => {
                                 setIsNavModalClose(true)
                             }}
                         >
-                            <p style={{ color: "black" }}>Zhenyu C</p>
+                            <p style={{ color: "black" }}>Carl C</p>
                         </Link>
                         {/* Logo End */}
                     </div>

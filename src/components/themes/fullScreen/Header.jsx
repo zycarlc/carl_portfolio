@@ -45,7 +45,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
                     {/* Logo */}
                     <Link
                         className="logo"
-                        title="Zhenyu"
+                        title="Carl"
                         smooth="easeInOutQuint"
                         duration={scrollDuration}
                         style={{
@@ -55,7 +55,7 @@ const FullScreenHeader = ({ textWhite, result }) => {
                         to="/"
                     >
                         <p className="mb-0" style={{ color: "#1e3932" }}>
-                            Zhenyu Chen
+                            Carl Chen
                         </p>
                     </Link>
                     {/* Logo End */}

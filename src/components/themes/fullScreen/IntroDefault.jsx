@@ -17,8 +17,8 @@ const FullScreenDefaultIntro = ({ result }) => {
                 onLoad={() => {
                     setImageLoaded(true)
                 }}
-                title="I'm Zhenyu"
-                alt="I'm Zhenyu"
+                title="I'm Carl"
+                alt="I'm Carl"
                 hidden
             />
             <div className="container my-auto py-4">
