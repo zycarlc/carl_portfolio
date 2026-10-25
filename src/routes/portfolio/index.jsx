@@ -12,8 +12,8 @@ function Home({ result }) {
     return (
         <>
             <AboutUs result={result}></AboutUs>
-            <Resume result={result}></Resume>
             <Portfolio result={result}></Portfolio>
+            <Resume result={result}></Resume>
             <CallToAction></CallToAction>
             <Contact result={result}></Contact>
         </>

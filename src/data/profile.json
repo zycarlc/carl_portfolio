@@ -1,0 +1,327 @@
+{
+    "contactInfo": {
+        "email": "zhenyuc@outlook.com",
+        "github": "zycarlc",
+        "instagram": "carlchaan",
+        "linkedin": "zhenyu-carl-chen",
+        "location": "Melbourne, Australia",
+        "portrait": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684928300/Portrait_-_color_1000_x_1000_x3mcvb.jpg"
+    },
+    "educations": [
+        {
+            "_key": "859e388d5bd1",
+            "_type": "institute",
+            "degree": "Software Engineering Immersive",
+            "endMMYYYY": "May 2023",
+            "institute": "General Assembly",
+            "skills": [
+                "HTML; CSS; JavaScript; Node.js; Express; React",
+                "Firebase; PostgreSQL",
+                "Netlify"
+            ],
+            "startMMYYYY": "Feb 2023"
+        },
+        {
+            "_key": "3c382d0f68f7",
+            "_type": "institute",
+            "degree": "Master of Agricultural Sciences",
+            "endMMYYYY": "Dec 2018",
+            "institute": "University of Melbourne",
+            "skills": [
+                "Research and Development (R&D)",
+                "Data Analysis"
+            ],
+            "startMMYYYY": "Feb 2017"
+        },
+        {
+            "_key": "ff2dc6554c6f",
+            "_type": "institute",
+            "degree": "Bachelor of Biological Sciences",
+            "endMMYYYY": "Jun 2016",
+            "institute": "South China Agricultural University",
+            "skills": [
+                ""
+            ],
+            "startMMYYYY": "Sept 2012"
+        }
+    ],
+    "jobTitle": "Software Engineer",
+    "name": "Zhenyu Chen",
+    "profile": [
+        "I'm a software engineer with 3 years of professional experience, currently at Simoco, where I build software for embedded Linux devices: Node.js and JavaScript applications, backend services, web apps, and Windows tools for device provisioning and internal workflows. I enjoy turning customer requirements into reliable systems that run in real-world environments.",
+        "I'm also passionate about putting AI to practical use. I led the development of an AI content generation system that writes marketing copy in each client's own voice, and more recently built Roger, an AI character running on a Simoco edge computer that talks with visitors and controls real hardware. I like building the whole system around the model, not just calling an API.",
+        "I came into software through a Master of Agricultural Sciences and the Software Engineering Immersive at General Assembly. That research background still shapes how I work: curious, data-driven and careful with the details."
+    ],
+    "projects": [
+        {
+            "_key": "a7c1e5d90b21",
+            "_type": "details",
+            "URL": "https://www.linkedin.com/in/zhenyu-carl-chen/",
+            "name": "Roger – AI Character on the Simoco VR950",
+            "projectType": "Work",
+            "year": "2026",
+            "shortIntro": "An interactive AI character running on the Linux-based Simoco VR950 edge computer at Comms Connect, Melbourne. Roger greets visitors, controls GPIOs, talks to CAN bus and sends SMS to visitors' phones.",
+            "intro": "To showcase the Simoco VR950 at Comms Connect (Melbourne Convention and Exhibition Centre), I built Roger, an interactive AI character for our exhibition stand. The VR950 is a full-scale, Linux-driven edge computer, not just a router, and Roger runs directly on it using its integrated cameras, microphones and speakers. Roger greets attendees, introduces our latest product breakthroughs and loops in sales representatives. Powered by the Gemini live model and deeply integrated with the unit's onboard Linux environment, Roger doesn't just talk: it controls physical hardware via GPIOs, interfaces with vehicle systems over CAN bus, and triggers SMS text messages to a visitor's phone.",
+            "technique": [
+                "Embedded Linux",
+                "Node.js",
+                "Gemini Live",
+                "GPIO",
+                "CAN bus",
+                "SMS"
+            ],
+            "demoURL": "/images/roger-comms-connect.jpg",
+            "images": [
+                "/images/roger-comms-connect.jpg"
+            ],
+            "thumbImage": "/images/roger-comms-connect.jpg"
+        },
+        {
+            "URL": "https://github.com/zycarlc/mock_ai_interview",
+            "_key": "fb8bef489a90",
+            "_type": "details",
+            "demoURL": "https://raw.githubusercontent.com/zycarlc/mock_ai_interview/refs/heads/main/screenshot.png",
+            "images": [
+                "https://raw.githubusercontent.com/zycarlc/mock_ai_interview/refs/heads/main/screenshot.png"
+            ],
+            "intro": "AI Mock Interview is a Next.js-based web application designed to help developers practice technical interviews. The AI acts as an interviewer, asking technical questions, providing feedback, and continuing like a real interview process. Users can record their answers and review past interview sessions.",
+            "name": "Mock AI Interview",
+            "projectType": "Solo",
+            "shortIntro": "Help you practice your next interview as a software engineer",
+            "technique": [
+                "NextJS",
+                "LangChain",
+                "Various LLMs (GPT, Claude, ...)"
+            ],
+            "thumbImage": "https://raw.githubusercontent.com/zycarlc/mock_ai_interview/refs/heads/main/screenshot.png"
+        },
+        {
+            "URL": "/enlightenly-case-study",
+            "_key": "d0b3b793a2f7",
+            "_type": "details",
+            "collaborationTool": [
+                "Jira"
+            ],
+            "demoURL": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1728356410/enlightenly/Screenshot_2024-08-26_at_3.28.48_pm_pmptfa.png",
+            "images": [
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1728356378/enlightenly/Screenshot_2024-09-18_at_11.41.36_am_spnhqw.png"
+            ],
+            "intro": "Led the development of an AI-integrated system for generating marketing materials tailored to client-specific voices and styles. Implemented a testing framework using LangChain and JavaScript to evaluate and compare multiple LLM performances. Integrated Retrieval-Augmented Generation (RAG) using Azure AI Search to optimize data retrieval and reduce token usage and latency. Developed a WordPress plugin for user interactions and a Node.js server for backend operations, ensuring seamless integration with existing systems.",
+            "name": "AI-Powered Content Generation System",
+            "projectType": "Internship",
+            "shortIntro": "Led the development of an AI-integrated system for generating marketing materials tailored to client-specific voices and styles, with an LLM testing framework (LangChain), RAG on Azure AI Search, a WordPress plugin and a Node.js backend.",
+            "technique": [
+                "JavaScript",
+                "NodeJS",
+                "LangChain",
+                "Azure AI Search",
+                "WordPress",
+                "Various LLMs (GPT, Claude, ...)"
+            ],
+            "thumbImage": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1728356597/enlightenly/Screenshot_2024-10-08_at_2.02.33_pm_kdaqlw.png",
+            "year": "2024"
+        },
+        {
+            "URL": "https://designhive.netlify.app/",
+            "_key": "2fa918d3b7a5",
+            "_type": "details",
+            "collaborationTool": [
+                "Figma",
+                "Slack"
+            ],
+            "demoURL": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1689309620/design%20hive/Screen_Recording_2023-07-14_at_2.36.36_pm_horizontal_vanehw.gif",
+            "images": [
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1689301447/design%20hive/Screenshot_2023-07-14_at_12.23.11_pm_ardtjn.png",
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1689310686/design%20hive/Screenshot_2023-07-14_at_2.57.52_pm_o7b8qv.png",
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1689310758/design%20hive/Screenshot_2023-07-14_at_2.59.07_pm_wxkdwj.png"
+            ],
+            "intro": "As the sole web developer collaborating with three talented UX designers, I played a pivotal role in bringing Design Hive to life—a visionary product development agency. By leveraging my expertise in web development, I transformed their exceptional designs into a functional and captivating website. With meticulous attention to detail, I ensured optimal performance, responsiveness, and interactive features across various devices. Visit designhive.netlify.app to witness the result of our combined efforts, showcasing seamless user experiences and a visually stunning web presence. ",
+            "name": "Design Hive",
+            "projectType": "Group Project",
+            "shortIntro": "As the sole web developer collaborating with three talented UX designers, I transformed their exceptional designs into a functional and captivating website for Design Hive. With meticulous attention to detail, I ensured optimal performance, responsiveness, and interactive features.",
+            "technique": [
+                "React",
+                "UX Design"
+            ],
+            "thumbImage": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1689301447/design%20hive/Screenshot_2023-07-14_at_12.23.11_pm_ardtjn.png",
+            "year": "2023"
+        },
+        {
+            "URL": "https://calm-servo-app-wphj.onrender.com",
+            "_key": "5ed48c57c71a",
+            "_type": "details",
+            "collaborationTool": [
+                "Slack",
+                "Zoom",
+                "Trello"
+            ],
+            "demoURL": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684396599/Screen_Recording_2023-05-18_at_5.50.59_pm_mxjxky.gif",
+            "images": [
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684764537/Calm%20Servo%20App/Screenshot_2023-05-23_at_12.07.58_am_bnthuj.png",
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684764574/Calm%20Servo%20App/Screenshot_2023-05-23_at_12.09.04_am_dytndm.png"
+            ],
+            "intro": "As the driving force behind this full-stack group project, I collaborated with three teammates. Together, we overcame challenges by harnessing the power of Google Maps API, Express, and PostgreSQL to develop an innovative app that simplifies the search for nearby petrol stations based on location or area search.",
+            "name": "CALM Servo App",
+            "projectType": "Group Project",
+            "shortIntro": "In this full-stack group project, I collaborated with three teammates to develop an innovative app that simplifies the search for nearby petrol stations using Google Maps API, Express, and PostgreSQL.",
+            "technique": [
+                "PostgreSQL",
+                "JavaScript",
+                "CSS",
+                "Express"
+            ],
+            "thumbImage": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684764572/Calm%20Servo%20App/Screenshot_2023-05-23_at_12.09.13_am_dna2em.png",
+            "year": "2023"
+        },
+        {
+            "URL": "https://carlchen.dev/",
+            "_key": "eae29db5a044",
+            "_type": "details",
+            "demoURL": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684806625/Portfolio/Screen_Recording_2023-05-23_at_11.42.42_am_yenr4q.gif",
+            "images": [
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684806697/Portfolio/Screenshot_2023-05-23_at_11.51.06_am_wvyq5r.png",
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684808337/Portfolio/Screenshot_2023-05-23_at_12.18.31_pm_ylmtth.png",
+                "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684808336/Portfolio/Screenshot_2023-05-23_at_12.18.39_pm_wcy06x.png"
+            ],
+            "intro": "Through my portfolio, you will discover a collection of my most impressive projects that showcase my skills in full-stack development. I strive to combine optimization techniques with aesthetics, ensuring that the portfolio not only prioritize performance in every detail but also captivates users with its visually appealing design. Browse through my portfolio and let's embark on a journey to transform ideas into extraordinary digital experiences.",
+            "name": "Portfolio",
+            "projectType": "Solo Project",
+            "shortIntro": "Discover my portfolio showcasing impressive full-stack development projects that prioritize performance and captivate users with visually appealing designs. Let's embark on a transformative journey to create extraordinary digital experiences.",
+            "technique": [
+                "React; Bootstrap; Sanito; Netlify"
+            ],
+            "thumbImage": "https://res.cloudinary.com/dmla1ujpx/image/upload/v1684808396/Portfolio/Screenshot_2023-05-23_at_12.19.41_pm_tymh0z.png",
+            "year": "2023"
+        }
+    ],
+    "resume": "https://drive.google.com/file/d/1ksFlzXgEWAvMLGMaMdYEP1-Ijaj-YLa7/view?usp=sharing",
+    "skills": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "NodeJS",
+        "React",
+        "Tailwindcss",
+        "HTML",
+        "CSS",
+        "PostgreSQL",
+        "AWS",
+        "Express"
+    ],
+    "workExperiences": [
+        {
+            "_key": "667680c0eb25",
+            "_type": "company",
+            "company": "Simoco",
+            "endMMYYYY": "Now",
+            "jobTitle": "Software Engineer - Full-time",
+            "responsibilities": [
+                "Design and develop Node.js and JavaScript applications in embedded Linux environments",
+                "Translate customer requirements into scalable system architectures and MVP solutions",
+                "Build interactive UI components and customer-facing web applications",
+                "Design and develop Windows desktop applications to streamline internal workflows and device provisioning"
+            ],
+            "skills": [
+                "JavaScript/TypeScript",
+                "Node.js",
+                "Embedded Linux",
+                "Python",
+                "Web App",
+                "Windows App",
+                "Architecture thinking",
+                "Ownership"
+            ],
+            "startMMYYYY": "June 2025"
+        },
+        {
+            "_key": "8e70ea4efefa",
+            "_type": "company",
+            "company": "Enlightenly",
+            "endMMYYYY": "Sept 2024",
+            "jobTitle": "Software Engineer - Internship",
+            "responsibilities": [
+                "API Development: Led the development of a Node.js server to support a WordPress plugin. Designed and implemented middleware for secure interactions, including CORS and API key validation. Integrated comprehensive",
+                "Node.js Development: Utilized advanced Node.js features, including asynchronous programming and event-driven architecture, to optimize performance and efficiently manage high concurrency.",
+                "AI Integration and Prompt Engineering: Managed AI integration projects focusing on Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG), achieving 80-90% accuracy in capturing client-specific writing styles."
+            ],
+            "skills": [
+                "Node.js",
+                "API",
+                "Large Language Model"
+            ],
+            "startMMYYYY": "Jul 2024"
+        },
+        {
+            "_key": "051e7f332d10",
+            "_type": "company",
+            "company": "Three Friends Abalone",
+            "endMMYYYY": "Sept 2023",
+            "jobTitle": "Software Engineer - Contract",
+            "responsibilities": [
+                "Web Development: Transformed the user experience for an abalone enterprise by redesigning their WordPress-based e-commerce store. And streamlined payment processing to enhance customer satisfaction and operational efficiency.",
+                "UI/UX Design: Executed extensive UI/UX enhancements for a visually appealing and intuitive design.",
+                "Adaptability and Communication: Demonstrated adaptability, problem- solving, and proactive communication throughout the project. And contributed to client success by delivering a significantly improved online platform."
+            ],
+            "skills": [
+                "PHP",
+                "WordPress"
+            ],
+            "startMMYYYY": "Aug 2023"
+        },
+        {
+            "_key": "768664801074",
+            "_type": "company",
+            "company": "General Assembly",
+            "endMMYYYY": "Jul 2023",
+            "jobTitle": "Collab-athon - Design Hive",
+            "responsibilities": [
+                "As the sole web developer collaborating with three talented UX designers, I transformed their exceptional designs into a functional and captivating website for Design Hive. With meticulous attention to detail, I ensured optimal performance, responsiveness, and interactive features."
+            ],
+            "skills": [
+                "React; Figma; UX Design",
+                ""
+            ],
+            "startMMYYYY": "Jul 2023"
+        },
+        {
+            "_key": "5810e8d2a90d",
+            "_type": "company",
+            "company": "General Assembly",
+            "endMMYYYY": "Mar 2023",
+            "jobTitle": "Project - Workout Buddies",
+            "responsibilities": [
+                "By combining Express and EJS, I was able to implement the CRUD functionalities required for my \"Workout Buddies\" application. Users could create profiles, search for workout partners based on preferences, create and manage workout events, and connect with others who share similar fitness goals."
+            ],
+            "skills": [
+                "HTML, CSS, JavaScript, Express, Node.js, EJS"
+            ],
+            "startMMYYYY": "Mar 2023"
+        },
+        {
+            "_key": "e3546ff330e9",
+            "_type": "company",
+            "company": "General Assembly",
+            "endMMYYYY": "Feb 2023",
+            "jobTitle": "Project - my Tic-Tac-Toe",
+            "responsibilities": [
+                "By combining HTML, CSS, and JavaScript, I am able to design and implement a fully functional Tic-Tac-Toe game from scratch, showcasing your proficiency in web development and programming."
+            ],
+            "skills": [
+                "HTML; CSS; JavaScript"
+            ],
+            "startMMYYYY": "Feb 2023"
+        },
+        {
+            "_key": "57eeff0b7294",
+            "_type": "company",
+            "company": "Australian Rural Exports Pty Ltd",
+            "endMMYYYY": "May 2023",
+            "jobTitle": "Agricultural Consultant",
+            "skills": [
+                "Data Analysis",
+                "Project Management"
+            ],
+            "startMMYYYY": "May 2019"
+        }
+    ]
+}

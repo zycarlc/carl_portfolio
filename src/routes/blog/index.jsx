@@ -9,29 +9,14 @@ import {
 import { Tooltip } from "../../components/Tooltip"
 import FullScreenHeader from "../../components/themes/fullScreen/Header"
 import BottomHeaderDefaultIntro from "../../components/themes/bottomHeader/IntroDefault"
-import axios from "axios"
+import profile from "../../data/profile.json"
 import Blog from "."
-
-let PROJECT_ID = process.env.REACT_APP_SANITY
-let DATASET = process.env.REACT_APP_DATASET
-let QUERY = encodeURIComponent(`*[_type == "${process.env.REACT_APP_QUERY}"]`)
-
-// Compose the URL for your project's endpoint and add the query
-let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
 
 function Index() {
     const appliedTheme = appliedConfig.appliedTheme
     const appliedIntro = appliedConfig.appliedIntro
 
-    const [result, setResult] = useState("")
-
-    useEffect(() => {
-        axios(PROJECT_URL)
-            .then(res => {
-                setResult(res.data.result[0])
-            })
-            .catch(err => console.log(err))
-    }, [])
+    const result = profile
 
     const handleNavClick = section => {
         document.getElementById(section).scrollIntoView({ behavior: "smooth" })

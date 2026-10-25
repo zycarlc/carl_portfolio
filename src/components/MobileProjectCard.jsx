@@ -33,6 +33,7 @@ export default function MobileProjectCard({
                             >
                                 <img
                                     className="img-thumbnail"
+                                    style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", objectPosition: "center" }}
                                     src={
                                         demoImages.current
                                             ? demoImages.current[index]
@@ -55,6 +56,7 @@ export default function MobileProjectCard({
                             <div className="portfolio-thumbnail">
                                 <img
                                     className="img-thumbnail d-block"
+                                    style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", objectPosition: "center" }}
                                     src={project.thumbImage}
                                     alt=""
                                 />

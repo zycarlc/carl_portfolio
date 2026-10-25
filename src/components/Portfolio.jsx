@@ -202,8 +202,10 @@ const Portfolio = ({ result }) => {
                                                                         )
                                                                     }}
                                                                     style={{
-                                                                        maxHeight:
-                                                                            "400px",
+                                                                        aspectRatio:
+                                                                            "16 / 10",
+                                                                        overflow:
+                                                                            "hidden",
                                                                     }}
                                                                 >
                                                                     <img
@@ -224,7 +226,11 @@ const Portfolio = ({ result }) => {
                                                                         alt=""
                                                                         style={{
                                                                             height: "100%",
-                                                                            width: "auto",
+                                                                            width: "100%",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                            objectPosition:
+                                                                                "center",
                                                                         }}
                                                                     />
 
@@ -247,11 +253,21 @@ const Portfolio = ({ result }) => {
                                                                     <img
                                                                         onLoad={() => {
                                                                             setimagesLoaded(
-                                                                                imagesLoaded +
+                                                                                n =>
+                                                                                    n +
                                                                                     1
                                                                             )
                                                                         }}
                                                                         className="img-thumbnail d-block"
+                                                                        style={{
+                                                                            width: "100%",
+                                                                            aspectRatio:
+                                                                                "16 / 10",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                            objectPosition:
+                                                                                "center",
+                                                                        }}
                                                                         src={
                                                                             project.thumbImage
                                                                         }

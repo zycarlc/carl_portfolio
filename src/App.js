@@ -15,17 +15,12 @@ import FullScreenHeader from "./components/themes/fullScreen/Header"
 import FullScreenDefaultIntro from "./components/themes/fullScreen/IntroDefault"
 import BottomHeaderDefaultIntro from "./components/themes/bottomHeader/IntroDefault"
 import StandardMenuDefaultIntro from "./components/themes/StandardMenu/IntroDefault"
-import axios from "axios"
+import profile from "./data/profile.json"
+import DevEditor from "./components/DevEditor"
+import AiChat from "./components/AiChat"
 import Blog from "./routes/blog/Blog"
 import Enlightenly from "./routes/enlightenly"
 import React from "react"
-
-const PROJECT_ID = process.env.REACT_APP_SANITY
-const DATASET = process.env.REACT_APP_DATASET
-const QUERY = encodeURIComponent(`*[_type == "${process.env.REACT_APP_QUERY}"]`)
-
-// Compose the URL for your project's endpoint and add the query
-const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
 
 function Header({ result, appliedTheme, appliedIntro }) {
     const [scrollTopVisible, setScrollTopVisible] = useState(false)
@@ -99,7 +94,7 @@ function Header({ result, appliedTheme, appliedIntro }) {
 }
 
 export default function App() {
-    const [result, setResult] = useState("")
+    const result = profile
     const handleNavClick = section => {
         document.getElementById(section).scrollIntoView({ behavior: "smooth" })
     }
@@ -118,13 +113,6 @@ export default function App() {
         )
     }
 
-    useEffect(() => {
-        axios(PROJECT_URL)
-            .then(res => {
-                setResult(res.data.result[0])
-            })
-            .catch(err => console.log(err))
-    }, [])
     return (
         <>
             <Header
@@ -158,6 +146,8 @@ export default function App() {
                 </div>
             </div>
             <Footer handleNavClick={handleNavClick} result={result}></Footer>
+            <AiChat name={result.name} />
+            {process.env.NODE_ENV === "development" && <DevEditor />}
         </>
     )
 }

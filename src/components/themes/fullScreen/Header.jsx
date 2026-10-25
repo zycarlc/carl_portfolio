@@ -151,13 +151,13 @@ const FullScreenHeader = ({ textWhite, result }) => {
                                                     }}
                                                     activeClass="active"
                                                     spy
-                                                    to="resume"
+                                                    to="projects"
                                                     onClick={e => {
                                                         e.preventDefault()
                                                         setIsNavModalClose(true)
                                                     }}
                                                 >
-                                                    Resume
+                                                    Projects
                                                 </ScrollTo>
                                             </li>
                                             <li className="nav-item">
@@ -170,13 +170,13 @@ const FullScreenHeader = ({ textWhite, result }) => {
                                                     }}
                                                     activeClass="active"
                                                     spy
-                                                    to="projects"
+                                                    to="resume"
                                                     onClick={e => {
                                                         e.preventDefault()
                                                         setIsNavModalClose(true)
                                                     }}
                                                 >
-                                                    Projects
+                                                    Resume
                                                 </ScrollTo>
                                             </li>
                                             <li className="nav-item">

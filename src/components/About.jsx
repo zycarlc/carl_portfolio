@@ -38,7 +38,7 @@ const AboutUs = ({ result }) => {
                                     className="wow heartBeat"
                                     data-wow-delay="1.3s"
                                 >
-                                    2+
+                                    3+
                                 </span>
                             </div>
                             <h3

@@ -8,21 +8,21 @@ const Resume = ({ result }) => {
 
     const skillIcons = {
         Firebase:
-            "https://cdn.sanity.io/images/zpskic8f/production/a34200f21d73250b338bfcf423bb6b2e779bf7f6-32x32.svg",
+            "/images/skills/a34200f21d73250b338bfcf423bb6b2e779bf7f6-32x32.svg",
         Bootstrap:
-            "https://cdn.sanity.io/images/zpskic8f/production/c5b0d9a66f7c8c08b8d4d9aafe55b4f9c0c7d24d-256x256.svg",
-        React: "https://cdn.sanity.io/images/zpskic8f/production/bcf867381478447e5f817a79410e0fa8bddfff38-256x228.svg",
+            "/images/skills/c5b0d9a66f7c8c08b8d4d9aafe55b4f9c0c7d24d-256x256.svg",
+        React: "/images/skills/bcf867381478447e5f817a79410e0fa8bddfff38-256x228.svg",
         JavaScript:
-            "https://cdn.sanity.io/images/zpskic8f/production/a9f58e5c8d5d0c088ff7e5e43363817b9fa1832b-256x256.svg",
+            "/images/skills/a9f58e5c8d5d0c088ff7e5e43363817b9fa1832b-256x256.svg",
         TypeScript: "images/Typescript_logo_2020.svg",
         PostgreSQL:
-            "https://cdn.sanity.io/images/zpskic8f/production/78caffbd13c7c07ccae5f3144c7df87ceb56bcb6-128x128.svg",
-        CSS: "https://cdn.sanity.io/images/zpskic8f/production/64359677c12dadf13878ea291f179acd0f168110-32x32.svg",
+            "/images/skills/78caffbd13c7c07ccae5f3144c7df87ceb56bcb6-128x128.svg",
+        CSS: "/images/skills/64359677c12dadf13878ea291f179acd0f168110-32x32.svg",
         MUI: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg",
-        HTML: "https://cdn.sanity.io/images/zpskic8f/production/f8d913d0a1ebc51e318226ea3d69ff3e01917cd7-32x32.svg",
-        SANITY: "https://cdn.sanity.io/images/zpskic8f/production/2a14afdf73e2c5232d56335d20faa8944a39fe9e-512x104.svg",
+        HTML: "/images/skills/f8d913d0a1ebc51e318226ea3d69ff3e01917cd7-32x32.svg",
+        SANITY: "/images/skills/2a14afdf73e2c5232d56335d20faa8944a39fe9e-512x104.svg",
         Express:
-            "https://cdn.sanity.io/images/zpskic8f/production/bde772e9e79c90a7e56bfe60aab4bc59ce641086-512x149.svg",
+            "/images/skills/bde772e9e79c90a7e56bfe60aab4bc59ce641086-512x149.svg",
         NodeJS: "/images/nodejs-seeklogo.com.svg",
         NextJS: "images/Nextjs-logo.svg",
         Tailwindcss: "images/Tailwind_CSS_Logo.svg",
