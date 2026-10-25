@@ -112,6 +112,12 @@ export default async req => {
     }
     if (contents[contents.length - 1].role !== "user") return json(400, { error: "Invalid conversation" })
 
+    // Post the lead back to the host the visitor is on. process.env.URL is the site's
+    // primary domain setting, which may not resolve (it pointed at an unowned domain).
+    const { origin, hostname } = new URL(req.url)
+    const isLocal = ["localhost", "127.0.0.1", "[::1]"].includes(hostname)
+    const siteUrl = isLocal ? undefined : origin
+
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
     const config = {
         systemInstruction: SYSTEM_PROMPT,
@@ -129,7 +135,7 @@ export default async req => {
             let result = { ok: false, error: "Unknown tool" }
             if (call.name === "save_contact") {
                 try {
-                    result = await saveContact(call.args || {}, process.env.URL)
+                    result = await saveContact(call.args || {}, siteUrl)
                 } catch (err) {
                     console.error("save_contact failed", err)
                     result = { ok: false, error: "Could not reach the form service." }
