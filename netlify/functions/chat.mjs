@@ -1,7 +1,14 @@
 import { GoogleGenAI } from "@google/genai"
 import profile from "../../src/data/profile.json" with { type: "json" }
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash"
+// All of these have a free tier (checked on ai.google.dev/gemini-api/docs/pricing). Free-tier
+// quota is per model, so they are tried in order when one runs out for the day.
+const MODELS = [
+    ...(process.env.GEMINI_MODEL ? [process.env.GEMINI_MODEL] : []),
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.8-flash",
+]
 const MAX_MESSAGES = 20
 const MAX_CHARS = 1000
 
@@ -127,8 +134,9 @@ export default async req => {
     }
 
     let saved = false
-    try {
-        let response = await ai.models.generateContent({ model: MODEL, contents, config })
+    const run = async model => {
+        const turns = [...contents]
+        let response = await ai.models.generateContent({ model, contents: turns, config })
 
         for (let i = 0; i < 2 && response.functionCalls?.length; i++) {
             const call = response.functionCalls[0]
@@ -142,29 +150,42 @@ export default async req => {
                 }
                 if (result.ok) saved = true
             }
-            contents.push(response.candidates[0].content)
-            contents.push({
+            turns.push(response.candidates[0].content)
+            turns.push({
                 role: "user",
                 parts: [{ functionResponse: { name: call.name, response: result } }],
             })
-            response = await ai.models.generateContent({ model: MODEL, contents, config })
+            response = await ai.models.generateContent({ model, contents: turns, config })
         }
+        return response
+    }
 
-        return json(200, {
-            reply: response.text || "Sorry, I couldn't come up with a reply. Could you rephrase?",
-            saved,
-        })
-    } catch (err) {
-        console.error("chat error", err)
-        // The details were stored; only the follow-up model call failed.
-        if (saved) {
+    let lastErr
+    for (const model of MODELS) {
+        try {
+            const response = await run(model)
             return json(200, {
-                reply: `Thanks! I've saved your details and ${profile.name.split(" ")[0]} will get back to you by email.`,
+                reply: response.text || "Sorry, I couldn't come up with a reply. Could you rephrase?",
                 saved,
             })
+        } catch (err) {
+            lastErr = err
+            console.error(`chat error (${model})`, err)
+            // The details were stored; only the follow-up model call failed.
+            if (saved) break
+            // Free-tier quota is per model per day, so a quota error (or an unavailable model)
+            // moves on to the next model; anything else is not worth retrying.
+            if (![429, 404, 503].includes(err?.status)) break
         }
-        return json(502, { error: "The assistant is unavailable right now." })
     }
+    if (saved) {
+        return json(200, {
+            reply: `Thanks! I've saved your details and ${profile.name.split(" ")[0]} will get back to you by email.`,
+            saved,
+        })
+    }
+    // Not 429: the chat widget reads that as the visitor sending messages too fast.
+    return json(lastErr?.status === 429 ? 503 : 502, { error: "The assistant is unavailable right now." })
 }
 
 // Per-IP limit enforced by Netlify before the function runs (over-limit requests get a 429).
