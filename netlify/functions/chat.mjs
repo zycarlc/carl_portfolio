@@ -120,15 +120,20 @@ export default async req => {
         temperature: 0.6,
     }
 
+    let saved = false
     try {
-        let saved = false
         let response = await ai.models.generateContent({ model: MODEL, contents, config })
 
         for (let i = 0; i < 2 && response.functionCalls?.length; i++) {
             const call = response.functionCalls[0]
             let result = { ok: false, error: "Unknown tool" }
             if (call.name === "save_contact") {
-                result = await saveContact(call.args || {}, process.env.URL)
+                try {
+                    result = await saveContact(call.args || {}, process.env.URL)
+                } catch (err) {
+                    console.error("save_contact failed", err)
+                    result = { ok: false, error: "Could not reach the form service." }
+                }
                 if (result.ok) saved = true
             }
             contents.push(response.candidates[0].content)
@@ -145,6 +150,13 @@ export default async req => {
         })
     } catch (err) {
         console.error("chat error", err)
+        // The details were stored; only the follow-up model call failed.
+        if (saved) {
+            return json(200, {
+                reply: `Thanks! I've saved your details and ${profile.name.split(" ")[0]} will get back to you by email.`,
+                saved,
+            })
+        }
         return json(502, { error: "The assistant is unavailable right now." })
     }
 }
