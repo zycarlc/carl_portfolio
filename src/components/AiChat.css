@@ -143,6 +143,15 @@
     white-space: pre-wrap;
     word-break: break-word;
 }
+.ai-chat-bullet {
+    position: relative;
+    padding-left: 14px;
+}
+.ai-chat-bullet::before {
+    content: "\2022";
+    position: absolute;
+    left: 2px;
+}
 .ai-chat-msg.assistant {
     align-self: flex-start;
     background: #fff;

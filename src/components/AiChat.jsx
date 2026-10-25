@@ -11,6 +11,23 @@ const SUGGESTIONS = [
     "How can I get in touch with you?",
 ]
 
+// The model sometimes answers with light Markdown; render **bold** and "* " bullets
+// instead of showing the raw symbols.
+const formatText = text =>
+    text.split("\n").map((line, i) => {
+        const bullet = /^\s*[*-]\s+/.test(line)
+        const parts = line
+            .replace(/^\s*[*-]\s+/, "")
+            .split(/\*\*(.+?)\*\*/g)
+            .map((p, j) => (j % 2 ? <strong key={j}>{p}</strong> : p))
+        return (
+            <div key={i} className={bullet ? "ai-chat-bullet" : undefined}>
+                {parts}
+                {line.trim() === "" && " "}
+            </div>
+        )
+    })
+
 // Renders `children` (the avatar) with a button underneath. Clicking the button
 // slides a chat window in over the avatar.
 const AiChat = ({ name, portrait, onOpenChange, children }) => {
@@ -119,7 +136,7 @@ const AiChat = ({ name, portrait, onOpenChange, children }) => {
                                 {m.role === "assistant" && portrait && (
                                     <img className="ai-chat-avatar-img" src={portrait} alt="" />
                                 )}
-                                <div className={`ai-chat-msg ${m.role}${m.error ? " error" : ""}`}>{m.text}</div>
+                                <div className={`ai-chat-msg ${m.role}${m.error ? " error" : ""}`}>{formatText(m.text)}</div>
                             </div>
                         ))}
                         {showSuggestions && (
