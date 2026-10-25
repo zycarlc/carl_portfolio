@@ -17,7 +17,6 @@ import BottomHeaderDefaultIntro from "./components/themes/bottomHeader/IntroDefa
 import StandardMenuDefaultIntro from "./components/themes/StandardMenu/IntroDefault"
 import profile from "./data/profile.json"
 import DevEditor from "./components/DevEditor"
-import AiChat from "./components/AiChat"
 import Blog from "./routes/blog/Blog"
 import Enlightenly from "./routes/enlightenly"
 import React from "react"
@@ -146,7 +145,6 @@ export default function App() {
                 </div>
             </div>
             <Footer handleNavClick={handleNavClick} result={result}></Footer>
-            <AiChat name={result.name} />
             {process.env.NODE_ENV === "development" && <DevEditor />}
         </>
     )
